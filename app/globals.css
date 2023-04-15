@@ -1,27 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Karla:wght@400;700&family=Merriweather+Sans&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+  .typo-header-big {
+    @apply font-bad text-[64px] tracking-[-1.5px] sm:text-[144px] sm:tracking-[-3px];
+  }
+  .typo-header-small {
+    @apply font-bad text-[32px] tracking-[-0.75px] sm:text-[48px] sm:tracking-[-1.75px];
+  }
+
+  .typo-title {
+    @apply font-merri text-[32px] sm:text-[48px];
+  }
+  .typo-title-big {
+    @apply font-merri text-[44px] sm:text-[64px];
+  }
+  .typo-title-small {
+    @apply font-merri text-[20px] sm:text-[28px];
+  }
+
+  .typo-body {
+    @apply font-karla text-[16px] sm:text-[20px];
+  }
+  .typo-body-bold {
+    @apply font-karla text-[16px] font-bold sm:text-[20px];
+  }
+
+  .typo-label {
+    @apply font-merri text-[16px] sm:text-[20px];
+  }
+  .typo-label-bold {
+    @apply font-merri text-[16px] font-bold sm:text-[20px];
+  }
 }
 
-@media (prefers-color-scheme: dark) {
+:root {
+  --neutral-primary: #4b4b4b;
+  --neutral-secondary: #a2a1a6;
+  --neutral-tertiary: #e0dfe1;
+  --neutral-bg: #ebebeb;
+
+  --neutral-dark-primary: #282833;
+  --neutral-dark-secondary: #33333e;
+  --neutral-dark-tertiary: #d0d0d3;
+  --neutral-dark-bg: #1f1f25;
+
+  --highlight-primary: #8447d1;
+  --highlight-secondary: #a27ed0;
+
+  --highlight-dark-primary: #ff8a00;
+  --highlight-dark-secondary: #ffb649;
+}
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
