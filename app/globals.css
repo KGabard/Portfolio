@@ -6,10 +6,10 @@
 
 @layer base {
   .typo-header-big {
-    @apply font-bad text-[64px] tracking-[-1.5px] sm:text-[144px] sm:tracking-[-3px];
+    @apply font-bad text-[72px] tracking-[-1.5px] sm:text-[144px] sm:tracking-[-3px] opacity-[15%] blur-[2px] sm:blur-[4px];
   }
   .typo-header-small {
-    @apply font-bad text-[32px] tracking-[-0.75px] sm:text-[48px] sm:tracking-[-1.75px];
+    @apply font-bad text-[32px] tracking-[-0.75px] sm:text-[48px] sm:tracking-[-1.75px] opacity-[15%] blur-[1px] sm:blur-[2px];
   }
 
   .typo-title {
@@ -86,5 +86,6 @@
 
   --content-max-width: 1440px;
 
+  --margin-mobile: 16px;
   --margin-desktop: 96px;
 }

@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen w-full max-w-[var(--content-max-width)] flex-col items-center px-[var(--margin-desktop)]">
+    <main className="flex min-h-screen w-full max-w-[var(--content-max-width)] flex-col items-center px-[var(--margin-mobile)] md:px-[var(--margin-desktop)]">
       <HomeSection />
       <h1 className="typo-header-big">Kevin Gabard</h1>
       <p className="typo-body my-4">
