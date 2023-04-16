@@ -2,7 +2,7 @@ type Props = {
   className?: string;
 };
 
-export default function LogoFull({ className }: Props) {
+export default function LogoFullSVG({ className }: Props) {
   return (
     <svg
       className={className}

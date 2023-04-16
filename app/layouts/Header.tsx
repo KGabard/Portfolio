@@ -1,7 +1,9 @@
 import Navbar from '../components/Navbar'
-import LogoFull from '../components/LogoFull'
+import LogoFull from '../components/svgs/LogoFullSVG'
 import ToggleThemeBtn from '../components/ToggleThemeBtn'
 import BurgerMenu from '../components/BurgerMenu'
+import ExternalLinkSVG from '../components/svgs/ExternalLinkSVG'
+import GithubSVG from '../components/svgs/GithubSVG'
 
 export default function Header() {
   return (
