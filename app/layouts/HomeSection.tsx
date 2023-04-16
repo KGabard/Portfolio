@@ -17,7 +17,7 @@ export default function HomeSection() {
           <h1 className="typo-title-big text-center text-black dark:text-white">
             Kevin Gabard
           </h1>
-          <div className="absolute -left-[var(--margin-mobile)] -right-[var(--margin-mobile)] md:-left-[var(--margin-desktop)] md:-right-[var(--margin-desktop)] top-1/2 -z-10 flex max-w-[100vw] -translate-y-[40%] justify-center overflow-hidden">
+          <div className="absolute -left-[var(--margin-mobile)] -right-[var(--margin-mobile)] top-1/2 -z-10 flex max-w-[100vw] -translate-y-[40%] justify-center overflow-hidden md:-left-[var(--margin-desktop)] md:-right-[var(--margin-desktop)]">
             <p
               className="typo-header-big whitespace-nowrap text-highlight-1 dark:text-highlight-dark-1 "
               aria-hidden
