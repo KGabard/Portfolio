@@ -25,6 +25,9 @@
   .typo-body-bold {
     @apply font-karla text-[16px] font-bold sm:text-[20px];
   }
+  .typo-body-bold-color {
+    @apply font-karla text-[16px] font-bold sm:text-[20px] text-highlight-1 dark:text-highlight-dark-1;
+  }
 
   .typo-label {
     @apply font-merri text-[16px] sm:text-[20px];

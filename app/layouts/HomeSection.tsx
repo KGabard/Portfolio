@@ -1,4 +1,5 @@
 import LinkButton from '../components/LinkButton'
+import SectionTitle from '../components/SectionTitle'
 
 export default function HomeSection() {
   return (
@@ -6,7 +7,7 @@ export default function HomeSection() {
       id="home"
       className="section-min-height flex w-full flex-col justify-center"
     >
-      <div className="mb-[10%] mt-8 flex w-full flex-col items-center gap-[2vh]">
+      <div className="my-[96px] flex w-full flex-col items-center gap-[2vh]">
         <p className="typo-title-small text-center text-black dark:text-white">
           <strong className="text-highlight-1 dark:text-highlight-dark-1">
             Bonjour !

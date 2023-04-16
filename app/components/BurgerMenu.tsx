@@ -12,14 +12,14 @@ export default function BurgerMenu() {
 
   return (
     <div className="block xl:hidden">
-      <button
+      <div
         onClick={handleToggleBtn}
         className={`relative h-8 w-8 cursor-pointer text-3xl xl:hidden ${
           isOpen ? 'toggle-btn' : ''
         } `}
       >
-        <div className="absolute top-4 -mt-0.5 h-1 w-8 rounded bg-black transition-all duration-500 before:absolute before:h-1 before:w-8 before:-translate-x-4 before:-translate-y-2.5 before:rounded before:bg-black before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-8 after:-translate-x-4 after:translate-y-2.5 after:rounded after:bg-black after:transition-all after:duration-500 after:content-[''] dark:bg-white dark:before:bg-white dark:after:bg-white"></div>
-      </button>
+        <div className="absolute top-4 -mt-0.5 h-1 w-8 rounded bg-black transition-all duration-500 before:absolute before:h-1 before:w-8 before:-translate-y-2.5 before:rounded before:bg-black before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-8 after:translate-y-2.5 after:rounded after:bg-black after:transition-all after:duration-500 after:content-[''] dark:bg-white dark:before:bg-white dark:after:bg-white"></div>
+      </div>
       <section
         id="mobile-menu"
         className={`z-[100] animate-open-menu absolute left-0 top-[var(--header-height)] w-full origin-top flex-col justify-center bg-black text-5xl ${
