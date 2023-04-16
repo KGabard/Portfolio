@@ -2,12 +2,12 @@ import Link from 'next/link'
 
 export default function Navbar() {
   return (
-    <nav className="flex gap-12">
+    <nav className="hidden gap-12 xl:flex">
       <Link
         className="typo-label relative text-black after:absolute after:bottom-0 after:right-0 after:h-0.5 after:w-0 after:bg-highlight-1 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:w-full dark:text-neutral-dark-3 dark:after:bg-highlight-dark-1"
         href={'#home'}
       >
-        Acceuil
+        Accueil
       </Link>
       <Link
         className="typo-label relative text-black after:absolute after:bottom-0 after:right-0 after:h-0.5 after:w-0 after:bg-highlight-1 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:w-full dark:text-neutral-dark-3 dark:after:bg-highlight-dark-1"

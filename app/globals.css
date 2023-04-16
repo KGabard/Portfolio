@@ -37,6 +37,16 @@
   }
 }
 
+@layer utilities {
+  .section-min-height {
+    min-height: calc(100vh - 87px);
+  }
+
+  .toggle-btn {
+    @apply [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div]:rotate-[180deg] [&>div]:bg-transparent dark:[&>div]:bg-transparent;
+  }
+}
+
 :root {
   --neutral-primary: #4b4b4b;
   --neutral-secondary: #a2a1a6;
@@ -64,4 +74,22 @@
 } */
 
 body {
+}
+
+@keyframes open-menu {
+  0% {
+    transform: scaleY(0);
+  }
+
+  80% {
+    transform: scaleY(1.2);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.animate-open-menu {
+  animation: open-menu 0.3s ease-in-out forwards;
 }
