@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-neutral-bg dark:bg-neutral-dark-bg">
+      <body className="bg-neutral-bg dark:bg-neutral-dark-bg flex flex-col items-center">
         <Providers>
           <Header />
           {children}

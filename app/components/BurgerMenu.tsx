@@ -22,7 +22,7 @@ export default function BurgerMenu() {
       </button>
       <section
         id="mobile-menu"
-        className={`z-[100] animate-open-menu absolute left-0 top-[87px] w-full origin-top flex-col justify-center bg-black text-5xl ${
+        className={`z-[100] animate-open-menu absolute left-0 top-[var(--header-height)] w-full origin-top flex-col justify-center bg-black text-5xl ${
           isOpen ? 'flex' : 'hidden'
         }`}
       >
@@ -33,31 +33,31 @@ export default function BurgerMenu() {
         >
           <Link
             href="#home"
-            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-white after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
+            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-neutral-2 dark:after:bg-neutral-dark-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
           >
             Accueil
           </Link>
           <Link
             href="#about"
-            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-white after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
+            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-neutral-2 dark:after:bg-neutral-dark-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
           >
             A propos
           </Link>
           <Link
             href="#skills"
-            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-white after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
+            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-neutral-2 dark:after:bg-neutral-dark-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
           >
             Compétences
           </Link>
           <Link
             href="#path"
-            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-white after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
+            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-neutral-2 dark:after:bg-neutral-dark-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
           >
             Cursus
           </Link>
           <Link
             href="#projects"
-            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-white after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
+            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-neutral-2 dark:after:bg-neutral-dark-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
           >
             Projets
           </Link>

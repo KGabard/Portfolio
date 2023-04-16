@@ -1,11 +1,12 @@
-import Image from 'next/image'
+import HomeSection from './layouts/HomeSection'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen w-full max-w-[var(--content-max-width)] flex-col items-center px-[var(--margin-desktop)]">
+      <HomeSection />
       <h1 className="typo-header-big">Kevin Gabard</h1>
       <p className="typo-body my-4">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
