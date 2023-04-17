@@ -3,6 +3,7 @@ import HomeSection from './layouts/HomeSection'
 import { Inter } from 'next/font/google'
 import SkillsSection from './layouts/SkillsSection'
 import PathSection from './layouts/PathSection'
+import ProjectsSection from './layouts/ProjectsSection'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,6 +14,7 @@ export default function Home() {
       <AboutSection />
       <SkillsSection />
       <PathSection />
+      <ProjectsSection />
     </main>
   )
 }

@@ -9,3 +9,17 @@ type SkillType =
   | 'sass'
   | 'figma'
   | 'jest'
+  | 'js'
+
+type ProjectType =
+  | 'perudo'
+  | 'hrnet'
+  | 'argent-bank'
+  | 'sport-see'
+  | 'kasa'
+  | 'billed'
+  | 'petits-plats'
+  | 'fisheye'
+  | 'game-on'
+  | 'ohmyfood'
+  | 'booki'
