@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className='scroll-smooth'>
-      <body className="bg-neutral-bg dark:bg-neutral-dark-bg flex flex-col items-center">
+      <body className="bg-light-noise dark:bg-dark-noise bg-neutral-bg dark:bg-neutral-dark-bg flex flex-col items-center">
         <Providers>
           <Header />
           {children}

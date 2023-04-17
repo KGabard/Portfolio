@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import profilPicture from 'public/assets/images/profilPicture.png'
-import frontPicture from 'public/assets/images/frontPicture.png'
+import profilPicture from 'public/assets/images/profilPicture3.png'
+import frontPicture from 'public/assets/images/frontPicture2.png'
 import SectionTitle from '../components/SectionTitle'
 import Link from 'next/link'
 
@@ -8,7 +8,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="my-[112px] flex w-full flex-col">
       <SectionTitle title="A propos" />
-      <div className="relative mx-auto mb-4 mt-10 h-fit w-full max-w-[480px] px-4 after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-b after:from-transparent after:from-55% after:to-neutral-bg after:to-[95%] after:text-white after:content-[''] dark:after:from-70% dark:after:to-neutral-dark-bg dark:after:to-95% lg:hidden">
+      <div className="relative mx-auto mb-4 mt-10 h-fit w-full max-w-[480px] px-4 lg:hidden">
         <Image
           className="mx-auto h-fit w-full max-w-[480px] px-4 pb-5"
           src={frontPicture}
@@ -18,7 +18,7 @@ export default function AboutSection() {
         />
       </div>
       <article className="typo-body lg:mt-14">
-        <div className="relative float-right hidden w-1/2 pl-8 after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-b after:from-transparent after:from-60% after:to-neutral-bg after:to-[93%] after:text-white after:content-[''] dark:after:from-50% dark:after:to-neutral-dark-bg dark:after:to-95% lg:block">
+        <div className="relative float-right hidden w-1/2 pl-8 lg:block">
           <Image src={profilPicture} alt="Kevin" width={4730} height={6171} />
         </div>
         <p className="w-full text-neutral-1 dark:text-neutral-dark-3 2xl:w-1/2">
