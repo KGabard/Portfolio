@@ -10,6 +10,7 @@ export default function Home() {
     <main className="flex min-h-screen w-full max-w-[var(--content-max-width)] flex-col items-center px-[var(--margin-mobile)] md:px-[var(--margin-desktop)]">
       <HomeSection />
       <AboutSection />
+      <div id="test"></div>
       <SkillsSection />
     </main>
   )

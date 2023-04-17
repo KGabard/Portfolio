@@ -17,7 +17,7 @@ export default function SkillsSection() {
 
   return (
     <section
-      id="skill"
+      id="skills"
       className="section-min-height my-[112px] flex w-full flex-col gap-10"
     >
       <SectionTitle title="Compétences" />

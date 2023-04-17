@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { useState } from 'react'
 
 export default function BurgerMenu() {
@@ -31,42 +30,42 @@ export default function BurgerMenu() {
           className="typo-title flex flex-col items-center bg-neutral-bg text-black dark:bg-neutral-dark-bg dark:text-white "
           aria-label="mobile"
         >
-          <Link
+          <a
             href="#home"
             className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-neutral-2 dark:after:bg-neutral-dark-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
           >
             Accueil
-          </Link>
-          <Link
+          </a>
+          <a
             href="#about"
             className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-neutral-2 dark:after:bg-neutral-dark-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
           >
             A propos
-          </Link>
-          <Link
+          </a>
+          <a
             href="#skills"
             className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-neutral-2 dark:after:bg-neutral-dark-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
           >
             Compétences
-          </Link>
-          <Link
+          </a>
+          <a
             href="#path"
             className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-neutral-2 dark:after:bg-neutral-dark-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
           >
             Cursus
-          </Link>
-          <Link
+          </a>
+          <a
             href="#projects"
             className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-neutral-2 dark:after:bg-neutral-dark-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
           >
             Projets
-          </Link>
-          <Link
+          </a>
+          <a
             href="#contact"
             className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black"
           >
             Contact
-          </Link>
+          </a>
         </nav>
       </section>
     </div>
