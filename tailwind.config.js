@@ -8,10 +8,10 @@ module.exports = {
   darkMode: 'class',
   theme: {
     screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
       '2xl': '1400px',
     },
     colors: {
@@ -45,6 +45,10 @@ module.exports = {
         merri: ['Merriweather Sans', 'sans-serif'],
         karla: ['Karla', 'sans-serif'],
       },
+      dropShadow: {
+        'big': '4px 4px 8px rgba(0, 0, 0, 0.2)',
+        'small': '3px 3px 6px rgba(0, 0, 0, 0.2)',
+      }
     },
   },
   plugins: [],

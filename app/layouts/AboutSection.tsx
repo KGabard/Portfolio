@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function AboutSection() {
   return (
-    <section id="about" className="my-[112px] flex flex-col">
+    <section id="about" className="my-[112px] flex flex-col w-full">
       <SectionTitle title="A propos" />
       <div className="relative mx-auto mb-4 mt-10 h-fit w-full max-w-[480px] px-4 after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-b after:from-transparent after:from-55% after:to-neutral-bg after:to-[95%] after:text-white after:content-[''] dark:after:from-70% dark:after:to-neutral-dark-bg dark:after:to-95% lg:hidden">
         <Image
