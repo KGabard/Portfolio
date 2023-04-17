@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function AboutSection() {
   return (
-    <section id="about" className="my-[112px] flex flex-col w-full">
+    <section id="about" className="my-[112px] flex w-full flex-col">
       <SectionTitle title="A propos" />
       <div className="relative mx-auto mb-4 mt-10 h-fit w-full max-w-[480px] px-4 after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-b after:from-transparent after:from-55% after:to-neutral-bg after:to-[95%] after:text-white after:content-[''] dark:after:from-70% dark:after:to-neutral-dark-bg dark:after:to-95% lg:hidden">
         <Image
@@ -21,7 +21,7 @@ export default function AboutSection() {
         <div className="relative float-right hidden w-1/2 pl-8 after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-b after:from-transparent after:from-60% after:to-neutral-bg after:to-[93%] after:text-white after:content-[''] dark:after:from-50% dark:after:to-neutral-dark-bg dark:after:to-95% lg:block">
           <Image src={profilPicture} alt="Kevin" width={4730} height={6171} />
         </div>
-        <p className="w-full 2xl:w-1/2 text-neutral-1 dark:text-neutral-dark-3">
+        <p className="w-full text-neutral-1 dark:text-neutral-dark-3 2xl:w-1/2">
           Bonjour ! Je suis Kevin, un développeur frontend basé à{' '}
           <strong className="typo-body-bold-color">Lyon</strong>.
           <br />
