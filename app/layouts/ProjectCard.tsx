@@ -1,8 +1,12 @@
-import perudoPresentation from 'pbulic/assets/images/perudo-presentation.png'
-import hrnetPresentation from 'pbulic/assets/images/perudo-presentation.png'
+import { parseBoldText } from '@/lib/utils'
+import Image from 'next/image'
+import LinkButton from '../components/LinkButton'
+import SkillTag from '../components/SkillTag'
 
 type Props = {
-  project: ProjectType
+  bigImgSrc: string
+  smallImgSrc: string
+  title: string
   skills: SkillType[]
   summary: string
   githubSrc: string
@@ -11,22 +15,82 @@ type Props = {
 }
 
 export default function ProjectCard({
-  project,
+  bigImgSrc,
+  smallImgSrc,
+  title,
   skills,
   summary,
   githubSrc,
   liveSrc,
   reverse = false,
 }: Props) {
-  let imageSrc: string | undefined
-  let projectName: string
-
-  switch (project) {
-    case 'perudo':
-
-
+  const summaryComponent = parseBoldText(summary)
 
   return (
-    <div>ProjectCard</div>
+    <div
+      className={`mx-auto flex h-fit w-full min-w-[288px] max-w-[90%] flex-col items-center gap-4 rounded-3xl bg-white p-8 drop-shadow-big dark:bg-neutral-dark-1 sm:max-w-[80%] md:max-w-[680px] xl:h-[480px] xl:min-w-[1024px] xl:max-w-[1150px] xl:gap-8 ${
+        reverse ? 'xl:flex-row-reverse' : 'xl:flex-row'
+      }`}
+    >
+      <div className="relative aspect-[14/9] w-full xl:w-[57%]">
+        <Image
+          className="hidden sm:block"
+          src={bigImgSrc}
+          alt={title}
+          fill
+          style={{ objectFit: 'contain' }}
+        />
+        <Image
+          className="sm:hidden"
+          src={smallImgSrc}
+          alt={title}
+          fill
+          style={{ objectFit: 'contain' }}
+        />
+      </div>
+      <div className="flex h-full w-full flex-col xl:flex-1">
+        <h2
+          className={`typo-title-small relative pb-3 text-black after:absolute after:-bottom-0 after:left-0 after:h-1.5 after:w-[128px] after:rounded-sm after:bg-highlight-1 after:content-[''] dark:text-white dark:after:bg-highlight-dark-1 ${
+            reverse ? 'xl:text-end xl:after:left-auto xl:after:right-0' : ''
+          }`}
+        >
+          {title}
+        </h2>
+        <div
+          className={`mt-7 flex flex-wrap gap-4 ${
+            reverse ? 'xl:justify-end' : ''
+          }`}
+        >
+          {skills.map((skill) => (
+            <SkillTag key={skill} skill={skill} />
+          ))}
+        </div>
+        <div className={`mt-6 w-full ${reverse ? 'xl:text-end' : ''}`}>
+          {summaryComponent}
+        </div>
+        <div
+          className={`mt-8 flex flex-1 items-end gap-4 ${
+            reverse ? 'xl:justify-end' : ''
+          }`}
+        >
+          {liveSrc && (
+            <LinkButton
+              label="Live"
+              href={liveSrc}
+              external={true}
+              icon="external"
+              lavitate={true}
+            />
+          )}
+          <LinkButton
+            label="Code"
+            href={githubSrc}
+            external={true}
+            icon="github"
+            lavitate={true}
+          />
+        </div>
+      </div>
+    </div>
   )
 }
