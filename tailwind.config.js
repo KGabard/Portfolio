@@ -66,10 +66,9 @@ module.exports = {
         },
       },
       animation: {
-        levitate:
-          'preFloat 300ms linear, float 1000ms 300ms infinite ease-out',
+        levitate: 'preFloat 300ms linear, float 1000ms 300ms infinite ease-out',
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')({ nocompatible: true })],
 }

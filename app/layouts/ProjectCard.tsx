@@ -41,14 +41,14 @@ export default function ProjectCard({
           style={{ objectFit: 'contain' }}
         />
         <Image
-          className="sm:hidden"
+          className="rounded-md sm:hidden"
           src={smallImgSrc}
           alt={title}
           fill
           style={{ objectFit: 'contain' }}
         />
       </div>
-      <div className="flex h-full w-full flex-col xl:flex-1 xl:">
+      <div className="flex h-full w-full flex-col xl:flex-1">
         <h2
           className={`typo-title-small relative pb-3 text-black after:absolute after:-bottom-0 after:left-0 after:h-1.5 after:w-[128px] after:rounded-sm after:bg-highlight-1 after:content-[''] dark:text-white dark:after:bg-highlight-dark-1 ${
             reverse ? 'xl:text-end xl:after:left-auto xl:after:right-0' : ''
@@ -65,7 +65,11 @@ export default function ProjectCard({
             <SkillTag key={skill} skill={skill} />
           ))}
         </div>
-        <div className={`mt-6 w-full xl:hover:overflow-y-auto xl:overflow-y-hidden ${reverse ? 'xl:text-end' : ''}`}>
+        <div
+          className={`mt-6 w-full scrollbar scrollbar-track-white scrollbar-thumb-neutral-3 scrollbar-thumb-rounded-md scrollbar-w-1 dark:scrollbar-track-neutral-dark-1  dark:scrollbar-thumb-neutral-dark-2 xl:overflow-y-hidden xl:hover:overflow-y-auto ${
+            reverse ? 'xl:text-end' : ''
+          }`}
+        >
           {summaryComponent}
         </div>
         <div
