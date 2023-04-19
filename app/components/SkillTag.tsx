@@ -9,7 +9,7 @@ export default function SkillTag({ skill }: Props) {
   const { iconSrc, label } = getSkillInfos(skill)
 
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-1 items-center">
       {iconSrc && (
         <Image
           className="h-[28px] w-[28px] sm:h-8 sm:w-8"

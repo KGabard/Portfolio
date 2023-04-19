@@ -28,7 +28,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="my-[112px] flex w-full flex-col">
       <SectionTitle title="Projets" />
-      <div className="mt-10 sm:mt-12 md:mt-16 flex w-full flex-col sm:gap-12 gap-8">
+      <div className="mt-10 flex w-full flex-col gap-8 sm:mt-12 sm:gap-12 md:mt-16">
         <ProjectCard
           bigImgSrc={perudoPresentation.src}
           smallImgSrc={perudoPresentationFS.src}
@@ -51,6 +51,107 @@ export default function ProjectsSection() {
           githubSrc={'https://github.com/KGabard/OC_P14_HRnet'}
           liveSrc={'https://kgabard.github.io/OC_P14_HRnet/'}
           reverse={true}
+        />
+        <ProjectCard
+          bigImgSrc={argentBankPresentation.src}
+          smallImgSrc={argentBankPresentationFS.src}
+          title={'Argent Bank'}
+          skills={['ts', 'react', 'redux', 'sass']}
+          summary={
+            'Application de **gestion de compte en banque** incluant un **système de connexion sécurisée** via un backend utilisant des tokens JWT. La gestion du state et de sa persistance et assurée par Redux Toolkit et Redux Persist.'
+          }
+          githubSrc={'https://github.com/KGabard/OC_P13_ArgentBank_Frontend'}
+        />
+        <ProjectCard
+          bigImgSrc={sportSeePresentation.src}
+          smallImgSrc={sportSeePresentationFS.src}
+          title={'Sport See App'}
+          skills={['ts', 'react', 'sass']}
+          summary={
+            'Application permettant aux utilisateurs de suivre leurs **entraînements sportifs** grâce à une interface intuitive et des **graphiques dynamiques** issus de la librairie **Recharts**.'
+          }
+          githubSrc={'https://github.com/KGabard/OC_P12_SportSee'}
+          liveSrc={'https://kgabard.github.io/OC_P12_SportSee/'}
+          reverse={true}
+        />
+        <ProjectCard
+          bigImgSrc={kasaPresentation.src}
+          smallImgSrc={kasaPresentationFS.src}
+          title={'Kasa'}
+          skills={['ts', 'react', 'sass']}
+          summary={
+            "Kasa est une plateforme de **location d'appartements** entre particuliers, développée avec React et React Router, et organisée en **composants réutilisables**."
+          }
+          githubSrc={'https://github.com/KGabard/OC_P11_Kasa'}
+          liveSrc={'https://kgabard.github.io/OC_P11_Kasa/'}
+        />
+        <ProjectCard
+          bigImgSrc={billedPresentation.src}
+          smallImgSrc={billedPresentationFS.src}
+          title={'Billed'}
+          skills={['html', 'css', 'js', 'jest']}
+          summary={
+            "Projet visant à **corriger des bugs** et à mettre en place des **tests unitaires et d'intégration** pour une solution Saas destinée aux équipes de ressources humaines."
+          }
+          githubSrc={'https://github.com/KGabard/OC_P9_Billed_Frontend'}
+          reverse={true}
+        />
+        <ProjectCard
+          bigImgSrc={petitsPlatsPresentation.src}
+          smallImgSrc={petitsPlatsPresentationFS.src}
+          title={'Les Petits Plats'}
+          skills={['html', 'css', 'ts', 'sass']}
+          summary={
+            "Site de **recettes de cuisine** incluant une recherche par mots clés et par tag. La librairie Benchmark.js a permis l'évaluation et la comparaison de **différents algorithmes de recherche** afin de déterminer le plus performant."
+          }
+          githubSrc={'https://github.com/KGabard/OC_P7_LesPetitsPlats'}
+          liveSrc={'https://kgabard.github.io/OC_P7_LesPetitsPlats/'}
+        />
+        <ProjectCard
+          bigImgSrc={fisheyePresentation.src}
+          smallImgSrc={fisheyePresentationFS.src}
+          title={'Fisheye'}
+          skills={['html', 'css', 'ts', 'sass']}
+          summary={
+            "Site dédié aux **photographes indépendants**. Une attention particulière est portée à l'**accessibilité** via les attributs ARIA, la navigation au clavier et l'utilisation du lecteur d'écran."
+          }
+          githubSrc={'https://github.com/KGabard/OC_P6_fisheye'}
+          liveSrc={'https://kgabard.github.io/OC_P6_fisheye/'}
+          reverse={true}
+        />
+        <ProjectCard
+          bigImgSrc={gameOnPresentation.src}
+          smallImgSrc={gameOnPresentationFS.src}
+          title={'Game On'}
+          skills={['html', 'css', 'ts', 'sass']}
+          summary={
+            "Site web de présentation d'**événements liés au jeu vidéo**. Il inclut un **formulaire d'inscription** rendu fonctionnel grâce à Typescript."
+          }
+          githubSrc={'https://github.com/KGabard/OC_P4_GameOn'}
+          liveSrc={'https://kgabard.github.io/OC_P4_GameOn/'}
+        />
+        <ProjectCard
+          bigImgSrc={ohmyfoodPresentation.src}
+          smallImgSrc={ohmyfoodPresentationFS.src}
+          title={'Ohmyfood'}
+          skills={['html', 'css', 'sass', 'figma']}
+          summary={
+            "Site web de **restauration gastronomique** avec menus personnalisables. Afin d'améliorer l'expérience utilisateur, le site est enrichi de **nombreuses animations CSS**."
+          }
+          githubSrc={'https://github.com/KGabard/OC_P3_ohmyfood-app/'}
+          liveSrc={'https://kgabard.github.io/OC_P3_ohmyfood-app/'}
+          reverse={true}
+        />
+        <ProjectCard
+          bigImgSrc={bookiPresentation.src}
+          smallImgSrc={bookiPresentationFS.src}
+          title={'HRnet'}
+          skills={['html', 'css', 'figma']}
+          summary={
+            'Le projet Booki consiste à intégrer des **maquettes** en un **site web responsive**. Figma est utilisé pour schématiser le site avant intégration.'
+          }
+          githubSrc={'https://github.com/KGabard/OC_P2_booki'}
+          liveSrc={'https://kgabard.github.io/OC_P2_booki/'}
         />
       </div>
     </section>
