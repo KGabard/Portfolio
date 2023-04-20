@@ -28,7 +28,7 @@ export default function ProjectCard({
 
   return (
     <div
-      className={`mx-auto flex h-fit w-full min-w-[288px] max-w-[90%] flex-col items-center gap-4 rounded-3xl bg-white p-8 drop-shadow-big dark:bg-neutral-dark-1 sm:max-w-[80%] md:max-w-[680px] xl:h-[480px] xl:min-w-[1024px] xl:max-w-[1150px] xl:gap-8 ${
+      className={`mx-auto flex h-fit w-full min-w-[288px] max-w-[90%] flex-col items-center gap-4 rounded-3xl bg-white p-8 drop-shadow-big dark:bg-neutral-dark-1 sm:max-w-[100%] md:max-w-[680px] xl:h-[480px] xl:min-w-[1024px] xl:max-w-[1150px] xl:gap-8 ${
         reverse ? 'xl:flex-row-reverse' : 'xl:flex-row'
       }`}
     >

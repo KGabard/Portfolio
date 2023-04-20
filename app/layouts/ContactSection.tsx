@@ -3,7 +3,7 @@ import SectionTitle from '../components/SectionTitle'
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="my-[112px] flex w-full flex-col gap-10">
+    <section id="contact" className="mt-[112px] mb-[200px] flex w-full flex-col gap-10">
       <SectionTitle title="Contact" />
       <p className="typo-body w-full text-neutral-1 dark:text-neutral-dark-3">
         Je suis actuellement disponible pour m&apos;investir dans de nouveaux

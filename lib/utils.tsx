@@ -4,7 +4,8 @@ import cssIcon from 'public/assets/icons/css-icon.png'
 import tsIcon from 'public/assets/icons/ts-icon.png'
 import jsIcon from 'public/assets/icons/js-icon.png'
 import reduxIcon from 'public/assets/icons/redux-icon.png'
-import nextIcon from 'public/assets/icons/next-icon.png'
+import nextIcon from 'public/assets/icons/next-icon-black.png'
+import nextIconDark from 'public/assets/icons/next-icon-white.png'
 import tailwindIcon from 'public/assets/icons/tailwind-icon.png'
 import sassIcon from 'public/assets/icons/sass-icon.png'
 import figmaIcon from 'public/assets/icons/figma-icon.png'
@@ -47,61 +48,73 @@ export function getSkillInfos(skill: SkillType) {
     case 'react':
       return {
         iconSrc: reactIcon.src,
-        label: 'React',
+        darkIconSrc: undefined,
+        label: 'React JS',
       }
     case 'html':
       return {
         iconSrc: htmlIcon.src,
+        darkIconSrc: undefined,
         label: 'HTML',
       }
     case 'css':
       return {
         iconSrc: cssIcon.src,
+        darkIconSrc: undefined,
         label: 'CSS',
       }
     case 'ts':
       return {
         iconSrc: tsIcon.src,
+        darkIconSrc: undefined,
         label: 'Typescript',
       }
     case 'js':
       return {
         iconSrc: jsIcon.src,
+        darkIconSrc: undefined,
         label: 'Javascript',
       }
     case 'redux':
       return {
         iconSrc: reduxIcon.src,
+        darkIconSrc: undefined,
         label: 'Redux',
       }
     case 'next':
       return {
         iconSrc: nextIcon.src,
-        label: 'Next',
+        darkIconSrc: nextIconDark.src,
+        label: 'Next JS',
       }
     case 'tailwind':
       return {
         iconSrc: tailwindIcon.src,
+        darkIconSrc: undefined,
         label: 'Tailwind',
       }
     case 'sass':
       return {
         iconSrc: sassIcon.src,
+        darkIconSrc: undefined,
         label: 'SASS',
       }
     case 'figma':
       return {
         iconSrc: figmaIcon.src,
+        darkIconSrc: undefined,
         label: 'Figma',
       }
     case 'jest':
       return {
         iconSrc: jestIcon.src,
+        darkIconSrc: undefined,
         label: 'Jest',
       }
     default:
       return {
         iconSrc: undefined,
+        darkIconSrc: undefined,
         label: undefined,
       }
   }

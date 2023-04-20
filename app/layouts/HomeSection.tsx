@@ -12,13 +12,13 @@ export default function HomeSection() {
           <strong className="text-highlight-1 dark:text-highlight-dark-1">
             Bonjour !
           </strong>{' '}
-          Je m&apos;appelle
+          &nbsp;Je m&apos;appelle
         </p>
         <div className="relative w-full">
           <h1 className="typo-title-big text-center text-black dark:text-white">
             Kevin Gabard
           </h1>
-          <div className="absolute -left-[var(--margin-mobile)] -right-[var(--margin-mobile)] top-1/2 -z-10 flex max-w-[100vw] -translate-y-[40%] justify-center overflow-hidden md:-left-[var(--margin-desktop)] md:-right-[var(--margin-desktop)]">
+          <div className="absolute -left-[var(--margin-mobile)] -right-[var(--margin-mobile)] top-1/2 -z-10 flex max-w-[100vw] -translate-y-[40%] justify-center overflow-hidden sm:-left-[var(--margin-desktop)] sm:-right-[var(--margin-desktop)]">
             <p
               className="typo-header-big whitespace-nowrap text-highlight-1 dark:text-highlight-dark-1 "
               aria-hidden
