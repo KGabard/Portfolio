@@ -2,6 +2,7 @@ import './globals.css'
 import React from 'react'
 import Providers from './provider/Providers'
 import Header from './layouts/Header'
+import Footer from './layouts/Footer'
 
 export const metadata = {
   title: 'Create Next App',
@@ -19,6 +20,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>
