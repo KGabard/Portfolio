@@ -64,9 +64,21 @@ module.exports = {
           '50%': { transform: 'translateY(-5px)' },
           '100%': { transform: 'translateY(-10px)' },
         },
+        openMenu: {
+          '0%': {
+            transform: 'scaleY(0)',
+          },
+          '80%': {
+            transform: 'scaleY(1.2)',
+          },
+          '100%': {
+            transform: 'scaleY(1)',
+          },
+        },
       },
       animation: {
         levitate: 'preFloat 300ms linear, float 1000ms 300ms infinite ease-out',
+        openMenu: 'openMenu 0.3s ease-in-out forwards',
       },
     },
   },

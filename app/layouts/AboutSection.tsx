@@ -88,7 +88,7 @@ export default function AboutSection() {
           </strong>
           , je vous invite à jeter un œil à mes projets ci-dessous et à me{' '}
           <Link
-            className="relative after:absolute after:-bottom-0.5 after:-left-[3%] after:h-3 after:w-[106%] after:bg-highlight-1 after:opacity-40 after:content-[''] dark:after:bg-highlight-dark-1"
+            className="relative after:absolute after:-bottom-0.5 after:-left-[3%] after:h-3 after:w-[106%] after:bg-highlight-1 after:opacity-[35%] after:content-[''] dark:after:bg-highlight-dark-1"
             href={`mailto:kev.gabard@gmail.com`}
           >
             contacter

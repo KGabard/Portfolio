@@ -21,7 +21,7 @@ export default function BurgerMenu() {
       </div>
       <section
         id="mobile-menu"
-        className={`z-[100] animate-open-menu absolute left-0 top-[var(--header-height)] w-full origin-top flex-col justify-center bg-black text-5xl ${
+        className={`z-[100] animate-openMenu absolute left-0 top-[var(--header-height)] w-full origin-top flex-col justify-center bg-black text-5xl ${
           isOpen ? 'flex' : 'hidden'
         }`}
       >
