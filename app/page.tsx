@@ -6,6 +6,7 @@ import PathSection from './layouts/PathSection'
 import ProjectsSection from './layouts/ProjectsSection'
 import ContactSection from './layouts/ContactSection'
 import SocialsBar from './components/SocialsBar'
+import SideNavBar from './components/SideNavBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +20,7 @@ export default function Home() {
       <ProjectsSection />
       <ContactSection />
       <SocialsBar />
+      <SideNavBar />
     </main>
   )
 }

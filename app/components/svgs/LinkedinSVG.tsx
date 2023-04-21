@@ -8,8 +8,6 @@ export default function LinkedinSVG({ className }: Props) {
       className={className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0,0,256,256"
-      width="50px"
-      height="50px"
       fill-rule="nonzero"
     >
       <g transform="translate(-20.48,-20.48) scale(1.16,1.16)">

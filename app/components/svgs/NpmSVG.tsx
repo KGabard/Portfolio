@@ -7,8 +7,6 @@ export default function NpmSVG({ className }: Props) {
     <svg
       className={className}
       fill="currentColor"
-      width="800px"
-      height="800px"
       viewBox="0 0 32 32"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
