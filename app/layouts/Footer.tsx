@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="my-[112px] flex w-full flex-col gap-12 px-[var(--margin-mobile)] sm:px-[var(--margin-desktop)]"
+      className="my-[112px] flex w-full max-w-[var(--content-max-width)]  flex-col gap-12 px-[var(--margin-mobile)] sm:px-[var(--margin-desktop)]"
     >
       <div className="h-2 w-full rounded-sm bg-neutral-3 dark:bg-neutral-dark-2 "></div>
       <div className="flex flex-col items-start gap-2">
