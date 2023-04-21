@@ -5,6 +5,7 @@ import SkillsSection from './layouts/SkillsSection'
 import PathSection from './layouts/PathSection'
 import ProjectsSection from './layouts/ProjectsSection'
 import ContactSection from './layouts/ContactSection'
+import SocialsBar from './components/SocialsBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,6 +18,7 @@ export default function Home() {
       <PathSection />
       <ProjectsSection />
       <ContactSection />
+      <SocialsBar />
     </main>
   )
 }

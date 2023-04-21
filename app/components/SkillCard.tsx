@@ -9,7 +9,7 @@ export default function SkillCard({ skill }: Props) {
   const { iconSrc, darkIconSrc, label } = getSkillInfos(skill)
 
   return (
-    <div className="group h-[88px] w-[88px] cursor-pointer rounded-lg bg-transparent [perspective:1000px] sm:h-[120px] sm:w-[120px]">
+    <div className="group realtive hover:z-10 h-[88px] w-[88px] cursor-pointer rounded-lg bg-transparent [perspective:1000px] sm:h-[120px] sm:w-[120px]">
       <div className="group-hover:flipFwrd relative h-full w-full transition-all duration-500 ease-[cubic-bezier(.7,.32,.62,1.54)] [transform-style:preserve-3d]">
         <div className="absolute flex h-full w-full items-center justify-center rounded-lg bg-white drop-shadow-small [backface-visibility:hidden] dark:bg-neutral-dark-1 sm:drop-shadow-big">
           {iconSrc && (

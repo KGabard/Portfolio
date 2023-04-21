@@ -83,7 +83,7 @@ export default function ProjectCard({
               href={liveSrc}
               external={true}
               icon="external"
-              lavitate={true}
+              levitate={true}
             />
           )}
           <LinkButton
@@ -91,7 +91,7 @@ export default function ProjectCard({
             href={githubSrc}
             external={true}
             icon="github"
-            lavitate={true}
+            levitate={true}
           />
         </div>
       </div>

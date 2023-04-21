@@ -50,7 +50,7 @@
   }
 
   .flipFwrd {
-    transform: translateZ(200px) rotateY(180deg);
+    transform: translateZ(300px) rotateY(180deg);
   }
 }
 
