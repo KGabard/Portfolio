@@ -19,33 +19,23 @@ export default function PathComponent({
 }: Props) {
   let logoSrc: string | undefined
   let institutionName: string
-  let width: number
-  let height: number
 
   switch (institution) {
     case 'oc':
       logoSrc = ocLogo.src
       institutionName = 'Openclassrooms'
-      width = 432
-      height = 72
       break
     case 'edf':
       logoSrc = edfLogo.src
       institutionName = 'EDF'
-      width = 380
-      height = 180
       break
     case 'insa':
       logoSrc = insaLogo.src
       institutionName = 'INSA de Lyon'
-      width = 432
-      height = 97
       break
     default:
       logoSrc = undefined
       institutionName = ''
-      width = 0
-      height = 0
       break
   }
 
@@ -66,8 +56,9 @@ export default function PathComponent({
           <Image
             src={logoSrc}
             alt={institutionName}
-            width={width}
-            height={height}
+            fill
+            sizes="50vw"
+            style={{ objectFit: 'contain' }}
           />
         )}
       </div>

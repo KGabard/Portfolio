@@ -1,8 +1,11 @@
+'use client'
+
 import Navbar from '../components/Navbar'
 import LogoFullSVG from '../components/svgs/LogoFullSVG'
 import ToggleThemeBtn from '../components/ToggleThemeBtn'
 import BurgerMenu from '../components/BurgerMenu'
 import LogoShortSVG from '../components/svgs/LogoShortSVG'
+import { useEffect } from 'react'
 
 export default function Header() {
   return (
