@@ -1,7 +1,16 @@
+'use client'
+
+import { useContext, useEffect } from 'react'
 import SectionTitle from '../components/SectionTitle'
 import SkillCard from '../components/SkillCard'
+import useInView from '@/hooks/useInView'
+import { ScrollPositionContext } from '../providers/Providers'
 
-export default function SkillsSection() {
+type Props = {
+  sectionId: number
+}
+
+export default function SkillsSection({ sectionId }: Props) {
   const mySkills: SkillType[] = [
     'html',
     'css',
@@ -15,8 +24,20 @@ export default function SkillsSection() {
     'jest',
   ]
 
+  const { ref: sectionRef, inView } = useInView({
+    options: { rootMargin: '-50%' },
+  })
+  const { setActiveSection } = useContext(ScrollPositionContext)
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection(sectionId)
+    }
+  }, [inView, setActiveSection, sectionId])
+
   return (
     <section
+      ref={sectionRef}
       id="skills"
       className="my-[112px] flex w-full flex-col gap-10"
     >

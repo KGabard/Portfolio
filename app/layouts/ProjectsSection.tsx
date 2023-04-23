@@ -1,3 +1,5 @@
+'use client'
+
 import SectionTitle from '../components/SectionTitle'
 
 import perudoPresentation from 'public/assets/images/perudo-presentation.png'
@@ -23,10 +25,32 @@ import ohmyfoodPresentationFS from 'public/assets/images/ohmyfood-presentation-f
 import bookiPresentation from 'public/assets/images/booki-presentation.png'
 import bookiPresentationFS from 'public/assets/images/booki-presentation-fullscreen.png'
 import ProjectCard from './ProjectCard'
+import useInView from '@/hooks/useInView'
+import { useContext, useEffect } from 'react'
+import { ScrollPositionContext } from '../providers/Providers'
 
-export default function ProjectsSection() {
+type Props = {
+  sectionId: number
+}
+
+export default function ProjectsSection({ sectionId }: Props) {
+  const { ref: sectionRef, inView } = useInView({
+    options: { rootMargin: '-50%' },
+  })
+  const { setActiveSection } = useContext(ScrollPositionContext)
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection(sectionId)
+    }
+  }, [inView, setActiveSection, sectionId])
+
   return (
-    <section id="projects" className="my-[112px] flex w-full flex-col">
+    <section
+      ref={sectionRef}
+      id="projects"
+      className="my-[112px] flex w-full flex-col"
+    >
       <SectionTitle title="Projets" />
       <div className="mt-10 flex w-full flex-col gap-8 sm:mt-12 sm:gap-12 md:mt-16">
         <ProjectCard
@@ -145,7 +169,7 @@ export default function ProjectsSection() {
         <ProjectCard
           bigImgSrc={bookiPresentation.src}
           smallImgSrc={bookiPresentationFS.src}
-          title={'HRnet'}
+          title={'Booki'}
           skills={['html', 'css', 'figma']}
           summary={
             'Le projet Booki consiste à intégrer des **maquettes** en un **site web responsive**. Figma est utilisé pour schématiser le site avant intégration.'

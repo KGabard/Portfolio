@@ -52,6 +52,10 @@
   .flipFwrd {
     transform: translateZ(300px) rotateY(180deg);
   }
+
+  .activateNavSquare {
+    @apply rotate-45 bg-highlight-1 opacity-100 dark:bg-highlight-dark-1;
+  }
 }
 
 :root {

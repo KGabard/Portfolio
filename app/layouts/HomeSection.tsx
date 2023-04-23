@@ -1,9 +1,30 @@
+'use client'
+
+import useInView from '@/hooks/useInView'
 import LinkButton from '../components/LinkButton'
 import SectionTitle from '../components/SectionTitle'
+import { useContext, useEffect } from 'react'
+import { ScrollPositionContext } from '../providers/Providers'
 
-export default function HomeSection() {
+type Props = {
+  sectionId: number
+}
+
+export default function HomeSection({ sectionId }: Props) {
+  const { ref: sectionRef, inView } = useInView({
+    options: { rootMargin: '-50%' },
+  })
+  const { setActiveSection } = useContext(ScrollPositionContext)
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection(sectionId)
+    }
+  }, [inView, setActiveSection, sectionId])
+
   return (
     <section
+      ref={sectionRef}
       id="home"
       className="section-min-height flex w-full flex-col justify-center pt-[var(--header-height)]"
     >

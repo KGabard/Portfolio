@@ -1,11 +1,35 @@
+'use client'
+
+import useInView from '@/hooks/useInView'
 import PathComponent from '../components/PathComponent'
 import SectionTitle from '../components/SectionTitle'
+import { useContext, useEffect } from 'react'
+import { ScrollPositionContext } from '../providers/Providers'
 
-export default function PathSection() {
+type Props = {
+  sectionId: number
+}
+
+export default function PathSection({ sectionId }: Props) {
+  const { ref: sectionRef, inView } = useInView({
+    options: { rootMargin: '-50%' },
+  })
+  const { setActiveSection } = useContext(ScrollPositionContext)
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection(sectionId)
+    }
+  }, [inView, setActiveSection, sectionId])
+
   return (
-    <section id="path" className="my-[112px] flex w-full flex-col">
+    <section
+      ref={sectionRef}
+      id="path"
+      className="my-[112px] flex w-full flex-col"
+    >
       <SectionTitle title="Parcours" />
-      <div className="relative mt-14 flex mx-auto lg:mx-0 lg:w-full flex-col gap-12">
+      <div className="relative mx-auto mt-14 flex flex-col gap-12 lg:mx-0 lg:w-full">
         <PathComponent
           institution="oc"
           dates="2022-2023"
@@ -22,7 +46,7 @@ export default function PathSection() {
           dates="2010-2015"
           qualification="Diplôme **Génie Énergétique et Environnement**"
         />
-        <div className="absolute translate-x-1.5 lg:-translate-x-1/2 left-0 lg:left-1/2 top-0 -z-10 h-full w-1 bg-neutral-1 drop-shadow-sharp rounded-full dark:bg-neutral-dark-3"></div>
+        <div className="absolute left-0 top-0 -z-10 h-full w-1 translate-x-1.5 rounded-full bg-neutral-1 drop-shadow-sharp dark:bg-neutral-dark-3 lg:left-1/2 lg:-translate-x-1/2"></div>
       </div>
     </section>
   )

@@ -1,9 +1,33 @@
+'use client'
+
 import Link from 'next/link'
 import SectionTitle from '../components/SectionTitle'
+import useInView from '@/hooks/useInView'
+import { useContext, useEffect } from 'react'
+import { ScrollPositionContext } from '../providers/Providers'
 
-export default function ContactSection() {
+type Props = {
+  sectionId: number
+}
+
+export default function ContactSection({ sectionId }: Props) {
+  const { ref: sectionRef, inView } = useInView({
+    options: { rootMargin: '-50%' },
+  })
+  const { setActiveSection } = useContext(ScrollPositionContext)
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection(sectionId)
+    }
+  }, [inView, setActiveSection, sectionId])
+
   return (
-    <section id="contact" className="mt-[112px] mb-[200px] flex w-full flex-col gap-10">
+    <section
+      ref={sectionRef}
+      id="contact"
+      className="mb-[200px] mt-[112px] flex w-full flex-col gap-10"
+    >
       <SectionTitle title="Contact" />
       <p className="typo-body w-full text-neutral-1 dark:text-neutral-dark-3">
         Je suis actuellement disponible pour m&apos;investir dans de nouveaux

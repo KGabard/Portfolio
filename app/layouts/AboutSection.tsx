@@ -1,12 +1,36 @@
+'use client'
+
 import Image from 'next/image'
 import profilPicture from 'public/assets/images/profilPicture3.png'
 import frontPicture from 'public/assets/images/frontPicture2.png'
 import SectionTitle from '../components/SectionTitle'
 import Link from 'next/link'
+import useInView from '@/hooks/useInView'
+import { useContext, useEffect } from 'react'
+import { ScrollPositionContext } from '../providers/Providers'
 
-export default function AboutSection() {
+type Props = {
+  sectionId: number
+}
+
+export default function AboutSection({ sectionId }: Props) {
+  const { ref: sectionRef, inView } = useInView({
+    options: { rootMargin: '-50%' },
+  })
+  const { setActiveSection } = useContext(ScrollPositionContext)
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection(sectionId)
+    }
+  }, [inView, setActiveSection, sectionId])
+
   return (
-    <section id="about" className="my-[112px] flex w-full flex-col">
+    <section
+      ref={sectionRef}
+      id="about"
+      className="my-[112px] flex w-full flex-col"
+    >
       <SectionTitle title="A propos" />
       <div className="relative mx-auto mb-4 mt-10 h-fit w-full max-w-[480px] px-4 lg:hidden">
         <Image

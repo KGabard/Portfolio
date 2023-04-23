@@ -13,12 +13,12 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main className="flex min-h-screen w-full max-w-[var(--content-max-width)] flex-col items-center px-[var(--margin-mobile)] sm:px-[var(--margin-desktop)]">
-      <HomeSection />
-      <AboutSection />
-      <SkillsSection />
-      <PathSection />
-      <ProjectsSection />
-      <ContactSection />
+      <HomeSection sectionId={0} />
+      <AboutSection sectionId={1} />
+      <SkillsSection sectionId={2} />
+      <PathSection sectionId={3} />
+      <ProjectsSection sectionId={4} />
+      <ContactSection sectionId={5} />
       <SocialsBar />
       <SideNavBar />
     </main>
