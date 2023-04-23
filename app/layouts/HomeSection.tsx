@@ -5,7 +5,7 @@ export default function HomeSection() {
   return (
     <section
       id="home"
-      className="section-min-height flex w-full flex-col justify-center"
+      className="section-min-height flex w-full flex-col justify-center pt-[var(--header-height)]"
     >
       <div className="my-[96px] flex w-full flex-col items-center gap-[2vh]">
         <p className="typo-title-small text-center text-black dark:text-white">
