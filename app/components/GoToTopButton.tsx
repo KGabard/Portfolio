@@ -16,7 +16,7 @@ export default function GoToTopButton() {
   }, [])
 
   const { isScrollBelowLimit: shoulAppear } = useScrollLimitCheck({
-    limitPercent: 100,
+    limitPercent: 90,
   })
 
   return (

@@ -25,7 +25,7 @@ export default function HomeSection({ sectionId }: Props) {
     }
   }, [])
 
-  const { ref: sectionRef, inView } = useInView({
+  const { ref: sectionRef, inView } = useInView<HTMLElement>({
     options: { rootMargin: '-50%' },
   })
   const { setActiveSection } = useContext(ScrollPositionContext)

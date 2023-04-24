@@ -1,11 +1,19 @@
+import useInView from "@/hooks/useInView"
+
 type Props = {
   title: string
 }
 
 export default function SectionTitle({ title }: Props) {
+  const {ref: titleRef, inView} = useInView<HTMLHeadingElement>({
+    options: { rootMargin: '-50%' },
+  })
+
   return (
     <div className="relative pt-5 sm:pt-11">
-      <h2 className="typo-title relative text-black after:absolute after:-bottom-3.5 after:left-0 after:h-[6px] after:w-[132px] after:rounded-sm after:bg-highlight-1 after:content-[''] dark:text-white dark:after:bg-highlight-dark-1 sm:after:-bottom-4 sm:after:h-[8px] sm:after:w-[192px]">
+      <h2 ref={titleRef} className={`typo-title relative text-black after:absolute after:-bottom-3.5 after:left-0 after:h-[6px] after:w-[132px] after:rounded-sm after:bg-highlight-1 after:content-[''] dark:text-white dark:after:bg-highlight-dark-1 sm:after:-bottom-4 sm:after:h-[8px] sm:after:w-[192px] ${
+              inView ? 'textWritingAnimation' : ''
+            }`}>
         {title}
       </h2>
       <p
