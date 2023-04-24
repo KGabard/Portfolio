@@ -78,19 +78,19 @@ module.exports = {
         textAfterWriting: {
           '0%': {
             transformOrigin: 'left center',
-            transform: 'translateX(-5%) skewX(-30deg) scaleX(0)',
+            transform: 'translateX(-2.5%) skewX(-20deg) scaleX(0)',
           },
           '40%': {
             transformOrigin: 'left center',
-            transform: 'translateX(-5%) skewX(-30deg) scaleX(1.1)',
+            transform: 'translateX(-2.5%) skewX(-20deg) scaleX(1.05)',
           },
           '60%': {
             transformOrigin: 'right center',
-            transform: 'translateX(5%) skewX(-30deg) scaleX(1.1)',
+            transform: 'translateX(2.5%) skewX(-20deg) scaleX(1.05)',
           },
           '100%': {
             transformOrigin: 'right center',
-            transform: 'translateX(5%) skewX(-30deg) scaleX(0)',
+            transform: 'translateX(2.5%) skewX(-20deg) scaleX(0)',
           },
         },
         textAfterColoringLight: {

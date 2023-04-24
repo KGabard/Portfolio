@@ -65,7 +65,7 @@ export default function HomeSection({ sectionId }: Props) {
           </div>
         </div>
         <h2
-          className={`typo-title text-center text-black [animation-delay:600ms] after:[animation-delay:600ms] dark:text-white dark:after:[animation-delay:600ms] ${
+          className={` typo-title text-center text-black [animation-delay:600ms] after:[animation-delay:600ms] dark:text-white dark:after:[animation-delay:600ms] ${
             isFirstRender ? 'textWritingAnimation' : ''
           }`}
         >
