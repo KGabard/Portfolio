@@ -166,6 +166,16 @@ module.exports = {
             transform: 'translateY(0)',
           },
         },
+        growX: {
+          from: {
+            transform: 'scaleX(0)',
+            transformOrigin: 'left',
+          },
+          to: {
+            transform: 'scaleX(1)',
+            transformOrigin: 'left',
+          },
+        },
       },
       animation: {
         levitate: 'preFloat 300ms linear, float 1000ms 300ms infinite ease-out',
@@ -177,9 +187,11 @@ module.exports = {
         textAppear: 'textAppearance 500ms backwards',
         fadeIn: 'fade 500ms ease-in both',
         slideIn: 'slideIn 0ms both',
-        fadeInAndUp: 'fade 400ms ease-in both, slideSlightlyUp 400ms ease-in both',
+        fadeInAndUp:
+          'fade 400ms ease-in both, slideSlightlyUp 400ms ease-in both',
         fadeOutAndDown:
           'fadeOut 400ms ease-in both, slideSlightlyDown 400ms ease-in both',
+        growX: 'growX 250ms ease-in-out both',
       },
     },
   },

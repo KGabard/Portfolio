@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import SectionTitle from '../components/SectionTitle'
 import useInView from '@/hooks/useInView'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import { ScrollPositionContext } from '../providers/Providers'
 
 type Props = {
@@ -11,16 +11,19 @@ type Props = {
 }
 
 export default function ContactSection({ sectionId }: Props) {
-  const { ref: sectionRef, inView } = useInView<HTMLElement>({
+  const sectionRef = useRef<HTMLElement>(null)
+  const { inRestrictedView } = useInView<HTMLElement>({
+    observedRef: sectionRef,
     options: { rootMargin: '-50%' },
   })
   const { setActiveSection } = useContext(ScrollPositionContext)
 
   useEffect(() => {
-    if (inView) {
+    if (inRestrictedView) {
+      console.log('ContactSection inRestrictedView');
       setActiveSection(sectionId)
     }
-  }, [inView, setActiveSection, sectionId])
+  }, [inRestrictedView, setActiveSection, sectionId])
 
   return (
     <section
@@ -28,7 +31,7 @@ export default function ContactSection({ sectionId }: Props) {
       id="contact"
       className="mb-[200px] mt-[112px] flex w-full flex-col gap-10"
     >
-      <SectionTitle title="Contact" />
+      <SectionTitle title="Contact" sectionId={sectionId} />
       <p className="typo-body w-full text-neutral-1 dark:text-neutral-dark-3">
         Je suis actuellement disponible pour m&apos;investir dans de nouveaux
         projets, n&apos;hésitez pas à me contacter si vous souhaitez que nous

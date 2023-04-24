@@ -6,7 +6,7 @@ import frontPicture from 'public/assets/images/frontPicture2.png'
 import SectionTitle from '../components/SectionTitle'
 import Link from 'next/link'
 import useInView from '@/hooks/useInView'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import { ScrollPositionContext } from '../providers/Providers'
 
 type Props = {
@@ -14,16 +14,20 @@ type Props = {
 }
 
 export default function AboutSection({ sectionId }: Props) {
-  const { ref: sectionRef, inView } = useInView<HTMLElement>({
+  const sectionRef = useRef<HTMLElement>(null)
+  const { inRestrictedView } = useInView<HTMLElement>({
+    observedRef: sectionRef,
     options: { rootMargin: '-50%' },
   })
   const { setActiveSection } = useContext(ScrollPositionContext)
 
   useEffect(() => {
-    if (inView) {
+    if (inRestrictedView) {
+      console.log('AboutSection inRestrictedView')
+
       setActiveSection(sectionId)
     }
-  }, [inView, setActiveSection, sectionId])
+  }, [inRestrictedView, setActiveSection, sectionId])
 
   return (
     <section
@@ -31,7 +35,7 @@ export default function AboutSection({ sectionId }: Props) {
       id="about"
       className="my-[112px] flex w-full flex-col"
     >
-      <SectionTitle title="A propos" />
+      <SectionTitle title="A propos" sectionId={sectionId} />
       <div className="relative mx-auto mb-4 mt-10 h-fit w-full max-w-[480px] px-4 lg:hidden">
         <Image
           className="mx-auto h-fit w-full max-w-[480px] px-4 pb-5"

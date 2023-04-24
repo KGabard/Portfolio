@@ -2,21 +2,32 @@
 
 import useInView from '@/hooks/useInView'
 import LinkButton from '../components/LinkButton'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { ScrollPositionContext } from '../providers/Providers'
 
 type Props = {
   sectionId: number
 }
 
+function resetScroll() {
+  document.body.style.overflow = 'hidden'
+  window.scrollTo({ top: 0, behavior: 'auto' })
+  document.documentElement.classList.remove('scroll-smooth')
+}
+
 export default function HomeSection({ sectionId }: Props) {
   const [isFirstRender, setIsFirstRender] = useState(true)
 
   useEffect(() => {
-    document.body.style.overflow = 'hidden'
+    if (window.scrollY > 0) {
+      resetScroll()
+    }
 
     const firstRenderOverTimeout = setTimeout(() => {
       document.body.style.overflow = 'auto'
+      if (!document.documentElement.classList.contains('scroll-smooth')) {
+        document.documentElement.classList.add('scroll-smooth')
+      }
       setIsFirstRender(false)
     }, 1800)
 
@@ -25,16 +36,19 @@ export default function HomeSection({ sectionId }: Props) {
     }
   }, [])
 
-  const { ref: sectionRef, inView } = useInView<HTMLElement>({
+  const sectionRef = useRef<HTMLElement>(null)
+  const { inRestrictedView } = useInView<HTMLElement>({
+    observedRef: sectionRef,
     options: { rootMargin: '-50%' },
   })
   const { setActiveSection } = useContext(ScrollPositionContext)
 
   useEffect(() => {
-    if (inView) {
+    if (inRestrictedView) {
+      console.log('HomeSection inRestrictedView');
       setActiveSection(sectionId)
     }
-  }, [inView, setActiveSection, sectionId])
+  }, [inRestrictedView, setActiveSection, sectionId])
 
   return (
     <section

@@ -1,27 +1,72 @@
-import useInView from "@/hooks/useInView"
+import useInView from '@/hooks/useInView'
+import { useContext, useEffect, useRef } from 'react'
+import { ScrollPositionContext } from '../providers/Providers'
+import useApplyClassesInView from '@/hooks/useApplyClassesInView'
 
 type Props = {
   title: string
+  sectionId: number
 }
 
-export default function SectionTitle({ title }: Props) {
-  const {ref: titleRef, inView} = useInView<HTMLHeadingElement>({
-    options: { rootMargin: '-50%' },
+export default function SectionTitle({ title, sectionId }: Props) {
+  const titleDivRef = useRef<HTMLDivElement>(null)
+  // const {
+  //   ref: titleDivRef,
+  //   inRestrictedView,
+  //   inScreenView,
+  // } = useInView<HTMLDivElement>({
+  //   options: { rootMargin: '0% 0% -30% 0%' },
+  // })
+
+  const { activeSection } = useContext(ScrollPositionContext)
+  const titleRef = useRef<HTMLHeadingElement>(null)
+  const underlineRef = useRef<HTMLDivElement>(null)
+  const backgroundRef = useRef<HTMLDivElement>(null)
+
+  useApplyClassesInView<HTMLDivElement>({
+    observedRef: titleDivRef,
+    targetRef: underlineRef,
+    classesToAdd: ['animate-growX', '[animation-delay:400ms]'],
+    classesToRemove: ['opacity-0'],
+    sectionId,
+  })
+
+  useApplyClassesInView<HTMLDivElement>({
+    observedRef: titleDivRef,
+    targetRef: titleRef,
+    classesToAdd: ['textWritingAnimation'],
+    classesToRemove: ['opacity-0'],
+    sectionId,
+  })
+
+  useApplyClassesInView<HTMLDivElement>({
+    observedRef: titleDivRef,
+    targetRef: backgroundRef,
+    classesToAdd: ['animate-fadeIn', '[animation-delay:700ms]'],
+    classesToRemove: ['opacity-0'],
+    sectionId,
   })
 
   return (
-    <div className="relative pt-5 sm:pt-11">
-      <h2 ref={titleRef} className={`typo-title relative text-black after:absolute after:-bottom-3.5 after:left-0 after:h-[6px] after:w-[132px] after:rounded-sm after:bg-highlight-1 after:content-[''] dark:text-white dark:after:bg-highlight-dark-1 sm:after:-bottom-4 sm:after:h-[8px] sm:after:w-[192px] ${
-              inView ? 'textWritingAnimation' : ''
-            }`}>
-        {title}
-      </h2>
-      <p
-        className="typo-header-big absolute -left-2 -bottom-8 -z-10 whitespace-nowrap text-highlight-1 dark:text-highlight-dark-1 sm:-left-7 sm:-bottom-[84px]"
-        aria-hidden
+    <div ref={titleDivRef} className="relative pt-5 sm:pt-11">
+      <h2
+        ref={titleRef}
+        className={`typo-title relative w-fit text-black dark:text-white`}
       >
         {title}
-      </p>
+      </h2>
+      <div
+        ref={underlineRef}
+        className="absolute -bottom-3.5 left-0 h-[6px] w-[132px] rounded-sm bg-highlight-1 content-['']  dark:bg-highlight-dark-1 sm:-bottom-4 sm:h-[8px] sm:w-[192px]"
+      ></div>
+      <div ref={backgroundRef}>
+        <p
+          className="typo-header-big absolute -bottom-8 -left-2 -z-10 whitespace-nowrap text-highlight-1 dark:text-highlight-dark-1 sm:-bottom-[84px] sm:-left-7"
+          aria-hidden
+        >
+          {title}
+        </p>
+      </div>
     </div>
   )
 }

@@ -26,7 +26,7 @@ import bookiPresentation from 'public/assets/images/booki-presentation.png'
 import bookiPresentationFS from 'public/assets/images/booki-presentation-fullscreen.png'
 import ProjectCard from './ProjectCard'
 import useInView from '@/hooks/useInView'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import { ScrollPositionContext } from '../providers/Providers'
 
 type Props = {
@@ -34,16 +34,19 @@ type Props = {
 }
 
 export default function ProjectsSection({ sectionId }: Props) {
-  const { ref: sectionRef, inView } = useInView<HTMLElement>({
+  const sectionRef = useRef<HTMLElement>(null)
+  const { inRestrictedView } = useInView<HTMLElement>({
+    observedRef: sectionRef,
     options: { rootMargin: '-50%' },
   })
   const { setActiveSection } = useContext(ScrollPositionContext)
 
   useEffect(() => {
-    if (inView) {
+    if (inRestrictedView) {
+      console.log('ProjectsSection inRestrictedView');
       setActiveSection(sectionId)
     }
-  }, [inView, setActiveSection, sectionId])
+  }, [inRestrictedView, setActiveSection, sectionId])
 
   return (
     <section
@@ -51,7 +54,7 @@ export default function ProjectsSection({ sectionId }: Props) {
       id="projects"
       className="my-[112px] flex w-full flex-col"
     >
-      <SectionTitle title="Projets" />
+      <SectionTitle title="Projets" sectionId={sectionId} />
       <div className="mt-10 flex w-full flex-col gap-8 sm:mt-12 sm:gap-12 md:mt-16">
         <ProjectCard
           bigImgSrc={perudoPresentation.src}

@@ -3,7 +3,7 @@
 import useInView from '@/hooks/useInView'
 import PathComponent from '../components/PathComponent'
 import SectionTitle from '../components/SectionTitle'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import { ScrollPositionContext } from '../providers/Providers'
 
 type Props = {
@@ -11,16 +11,19 @@ type Props = {
 }
 
 export default function PathSection({ sectionId }: Props) {
-  const { ref: sectionRef, inView } = useInView<HTMLElement>({
+  const sectionRef = useRef<HTMLElement>(null)
+  const { inRestrictedView } = useInView<HTMLElement>({
+    observedRef: sectionRef,
     options: { rootMargin: '-50%' },
   })
   const { setActiveSection } = useContext(ScrollPositionContext)
 
   useEffect(() => {
-    if (inView) {
+    if (inRestrictedView) {
+      console.log('PathSection inRestrictedView');
       setActiveSection(sectionId)
     }
-  }, [inView, setActiveSection, sectionId])
+  }, [inRestrictedView, setActiveSection, sectionId])
 
   return (
     <section
@@ -28,7 +31,7 @@ export default function PathSection({ sectionId }: Props) {
       id="path"
       className="my-[112px] flex w-full flex-col"
     >
-      <SectionTitle title="Parcours" />
+      <SectionTitle title="Parcours" sectionId={sectionId} />
       <div className="relative mx-auto mt-14 flex flex-col gap-12 lg:mx-0 lg:w-full">
         <PathComponent
           institution="oc"
