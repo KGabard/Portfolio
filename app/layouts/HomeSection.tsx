@@ -13,11 +13,16 @@ export default function HomeSection({ sectionId }: Props) {
   const [isFirstRender, setIsFirstRender] = useState(true)
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    document.body.style.overflow = 'hidden'
+
+    const firstRenderOverTimeout = setTimeout(() => {
+      document.body.style.overflow = 'auto'
       setIsFirstRender(false)
     }, 1800)
 
-    return () => clearTimeout(timeout)
+    return () => {
+      clearTimeout(firstRenderOverTimeout)
+    }
   }, [])
 
   const { ref: sectionRef, inView } = useInView({
