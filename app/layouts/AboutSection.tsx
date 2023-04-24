@@ -9,6 +9,7 @@ import useInView from '@/hooks/useInView'
 import { useContext, useEffect, useRef } from 'react'
 import { ScrollPositionContext } from '../providers/Providers'
 import useApplyClassesInView from '@/hooks/useApplyClassesInView'
+import useMediaQuery from '@/hooks/useMediaQuery'
 
 type Props = {
   sectionId: number
@@ -26,10 +27,12 @@ export default function AboutSection({ sectionId }: Props) {
   const profilPictureDivRef = useRef<HTMLDivElement>(null)
   const frontPictureDivRef = useRef<HTMLDivElement>(null)
 
+  const { isScreenSmall } = useMediaQuery({ minWidth: 1024 })
+
   useApplyClassesInView({
     observedRef: paragraphRef,
     targetRef: paragraphRef,
-    classesToAdd: ['animate-fadeInAndUp', '[animation-delay:500ms]'],
+    classesToAdd: ['animate-fadeInAndUp', `${isScreenSmall ? '[animation-delay:0ms]' : '[animation-delay:500ms]'}`],
     classesToRemove: ['opacity-0'],
     sectionId,
   })
@@ -63,7 +66,10 @@ export default function AboutSection({ sectionId }: Props) {
       className="my-[112px] flex w-full flex-col"
     >
       <SectionTitle title="A propos" sectionId={sectionId} />
-      <div ref={frontPictureDivRef} className="relative mx-auto mb-4 mt-10 h-fit w-full max-w-[480px] px-4 lg:hidden">
+      <div
+        ref={frontPictureDivRef}
+        className="relative mx-auto mb-4 mt-10 h-fit w-full max-w-[480px] px-4 lg:hidden"
+      >
         <Image
           className="mx-auto h-fit w-full max-w-[480px] px-4 pb-5"
           src={frontPicture}
