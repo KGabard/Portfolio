@@ -21,8 +21,6 @@ export default function SkillCard({
   const skillDivRef = useRef<HTMLDivElement>(null)
   const animationDelay = skillId * 100 + 500
 
-  console.log('Card ID:', skillId, 'delay:', animationDelay)
-
   useApplyClassesInView<HTMLDivElement>({
     observedRef,
     targetRef: skillDivRef,
