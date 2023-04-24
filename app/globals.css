@@ -56,6 +56,10 @@
   .activateNavSquare {
     @apply rotate-45 bg-highlight-1 opacity-100 dark:bg-highlight-dark-1;
   }
+
+  .textWritingAnimation {
+    @apply relative animate-textAppear after:absolute after:left-0 after:top-0 after:h-full after:w-full after:animate-writeTextLight after:content-[''] dark:after:animate-writeTextDark;
+  }
 }
 
 :root {

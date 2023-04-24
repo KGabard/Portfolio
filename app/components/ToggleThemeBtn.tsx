@@ -8,17 +8,26 @@ import sunIcon from 'public/assets/icons/sun-icon.svg'
 
 export default function ToggleThemeBtn() {
   const [mounted, setMounted] = useState(false)
+  const [enableClick, setEnableClick] = useState(false)
   const { theme, setTheme } = useTheme()
 
   // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
     setMounted(true)
+
+    const timeout = setTimeout(() => {
+      setEnableClick(true)
+    }, 1800)
+
+    return () => clearTimeout(timeout)
   }, [])
 
   return (
     <button
       className="text-amber-500 dark:text-sky-200 text-4xl"
-      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+      onClick={() => {
+        if (enableClick) setTheme(theme === 'light' ? 'dark' : 'light')
+      }}
     >
       {theme === 'dark' || !mounted ? (
         <Image src={sunIcon} alt="Mode clair" width={32} height={32} />

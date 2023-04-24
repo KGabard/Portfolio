@@ -75,10 +75,84 @@ module.exports = {
             transform: 'scaleY(1)',
           },
         },
+        textAfterWriting: {
+          '0%': {
+            transformOrigin: 'left center',
+            transform: 'translateX(-5%) skewX(-30deg) scaleX(0)',
+          },
+          '40%': {
+            transformOrigin: 'left center',
+            transform: 'translateX(-5%) skewX(-30deg) scaleX(1.1)',
+          },
+          '60%': {
+            transformOrigin: 'right center',
+            transform: 'translateX(5%) skewX(-30deg) scaleX(1.1)',
+          },
+          '100%': {
+            transformOrigin: 'right center',
+            transform: 'translateX(5%) skewX(-30deg) scaleX(0)',
+          },
+        },
+        textAfterColoringLight: {
+          '0%': {
+            backgroundColor: 'var(--neutral-secondary)',
+          },
+          '50%': {
+            backgroundColor: 'var(--neutral-secondary)',
+          },
+          '100%': {
+            backgroundColor: 'var(--highlight-primary)',
+          },
+        },
+        textAfterColoringDark: {
+          '0%': {
+            backgroundColor: 'var(--neutral-dark-tertiary)',
+          },
+          '50%': {
+            backgroundColor: 'var(--neutral-dark-tertiary)',
+          },
+          '100%': {
+            backgroundColor: 'var(--highlight-dark-primary)',
+          },
+        },
+        textAppearance: {
+          from: {
+            color: 'transparent',
+          },
+          '99%': {
+            color: 'transparent',
+          },
+          to: {
+            color: 'inherit',
+          },
+        },
+        fade: {
+          from: {
+            opacity: 0,
+          },
+          to: {
+            opacity: 1,
+          },
+        },
+        slideDown: {
+          from: {
+            transform: 'translateY(-100%)',
+          },
+          to: {
+            transform: 'translateY(0)',
+          },
+        },
       },
       animation: {
         levitate: 'preFloat 300ms linear, float 1000ms 300ms infinite ease-out',
         openMenu: 'openMenu 0.3s ease-in-out forwards',
+        writeTextLight:
+          'textAfterWriting 1s ease-in-out, textAfterColoringLight 1s ease-in-out',
+        writeTextDark:
+          'textAfterWriting 1s ease-in-out, textAfterColoringDark 1s ease-in-out',
+        textAppear: 'textAppearance 500ms backwards',
+        fadeIn: 'fade 500ms ease-in both',
+        slideDown: 'slideDown 0ms both',
       },
     },
   },
