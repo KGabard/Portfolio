@@ -43,7 +43,6 @@ export default function ProjectsSection({ sectionId }: Props) {
 
   useEffect(() => {
     if (inRestrictedView) {
-      console.log('ProjectsSection inRestrictedView');
       setActiveSection(sectionId)
     }
   }, [inRestrictedView, setActiveSection, sectionId])

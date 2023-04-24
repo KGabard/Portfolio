@@ -9,16 +9,8 @@ type Props = {
 }
 
 export default function SectionTitle({ title, sectionId }: Props) {
-  const titleDivRef = useRef<HTMLDivElement>(null)
-  // const {
-  //   ref: titleDivRef,
-  //   inRestrictedView,
-  //   inScreenView,
-  // } = useInView<HTMLDivElement>({
-  //   options: { rootMargin: '0% 0% -30% 0%' },
-  // })
-
   const { activeSection } = useContext(ScrollPositionContext)
+  const titleDivRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
   const underlineRef = useRef<HTMLDivElement>(null)
   const backgroundRef = useRef<HTMLDivElement>(null)

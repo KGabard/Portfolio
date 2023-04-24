@@ -20,7 +20,6 @@ export default function ContactSection({ sectionId }: Props) {
 
   useEffect(() => {
     if (inRestrictedView) {
-      console.log('ContactSection inRestrictedView');
       setActiveSection(sectionId)
     }
   }, [inRestrictedView, setActiveSection, sectionId])

@@ -45,7 +45,6 @@ export default function HomeSection({ sectionId }: Props) {
 
   useEffect(() => {
     if (inRestrictedView) {
-      console.log('HomeSection inRestrictedView');
       setActiveSection(sectionId)
     }
   }, [inRestrictedView, setActiveSection, sectionId])

@@ -8,6 +8,7 @@ import Link from 'next/link'
 import useInView from '@/hooks/useInView'
 import { useContext, useEffect, useRef } from 'react'
 import { ScrollPositionContext } from '../providers/Providers'
+import useApplyClassesInView from '@/hooks/useApplyClassesInView'
 
 type Props = {
   sectionId: number
@@ -21,10 +22,36 @@ export default function AboutSection({ sectionId }: Props) {
   })
   const { setActiveSection } = useContext(ScrollPositionContext)
 
+  const paragraphRef = useRef<HTMLParagraphElement>(null)
+  const profilPictureDivRef = useRef<HTMLDivElement>(null)
+  const frontPictureDivRef = useRef<HTMLDivElement>(null)
+
+  useApplyClassesInView({
+    observedRef: paragraphRef,
+    targetRef: paragraphRef,
+    classesToAdd: ['animate-fadeInAndUp', '[animation-delay:500ms]'],
+    classesToRemove: ['opacity-0'],
+    sectionId,
+  })
+
+  useApplyClassesInView({
+    observedRef: profilPictureDivRef,
+    targetRef: profilPictureDivRef,
+    classesToAdd: ['animate-fadeInAndUp', '[animation-delay:700ms]'],
+    classesToRemove: ['opacity-0'],
+    sectionId,
+  })
+
+  useApplyClassesInView({
+    observedRef: frontPictureDivRef,
+    targetRef: frontPictureDivRef,
+    classesToAdd: ['animate-fadeInAndUp', '[animation-delay:500ms]'],
+    classesToRemove: ['opacity-0'],
+    sectionId,
+  })
+
   useEffect(() => {
     if (inRestrictedView) {
-      console.log('AboutSection inRestrictedView')
-
       setActiveSection(sectionId)
     }
   }, [inRestrictedView, setActiveSection, sectionId])
@@ -36,7 +63,7 @@ export default function AboutSection({ sectionId }: Props) {
       className="my-[112px] flex w-full flex-col"
     >
       <SectionTitle title="A propos" sectionId={sectionId} />
-      <div className="relative mx-auto mb-4 mt-10 h-fit w-full max-w-[480px] px-4 lg:hidden">
+      <div ref={frontPictureDivRef} className="relative mx-auto mb-4 mt-10 h-fit w-full max-w-[480px] px-4 lg:hidden">
         <Image
           className="mx-auto h-fit w-full max-w-[480px] px-4 pb-5"
           src={frontPicture}
@@ -46,10 +73,16 @@ export default function AboutSection({ sectionId }: Props) {
         />
       </div>
       <article className="typo-body lg:mt-14">
-        <div className="relative float-right hidden w-1/2 pl-8 lg:block">
+        <div
+          ref={profilPictureDivRef}
+          className="relative float-right hidden w-1/2 pl-8 lg:block"
+        >
           <Image src={profilPicture} alt="Kevin" width={4730} height={6171} />
         </div>
-        <p className="w-full text-neutral-1 dark:text-neutral-dark-3 2xl:w-1/2">
+        <p
+          ref={paragraphRef}
+          className="w-full text-neutral-1 dark:text-neutral-dark-3 2xl:w-1/2"
+        >
           Bonjour ! Je suis Kevin, un développeur frontend basé à{' '}
           <strong className="typo-body-bold-color">Lyon</strong>.
           <br />

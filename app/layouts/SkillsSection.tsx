@@ -33,7 +33,6 @@ export default function SkillsSection({ sectionId }: Props) {
 
   useEffect(() => {
     if (inRestrictedView) {
-      console.log('SkillsSection inRestrictedView');
       setActiveSection(sectionId)
     }
   }, [inRestrictedView, setActiveSection, sectionId])

@@ -20,7 +20,6 @@ export default function PathSection({ sectionId }: Props) {
 
   useEffect(() => {
     if (inRestrictedView) {
-      console.log('PathSection inRestrictedView');
       setActiveSection(sectionId)
     }
   }, [inRestrictedView, setActiveSection, sectionId])
