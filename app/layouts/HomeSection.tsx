@@ -82,7 +82,7 @@ export default function HomeSection({ sectionId }: Props) {
           Créativité et technique pour des sites web esthétiques et performants.
         </p>
         <div className="mt-[4vh] animate-fadeIn overflow-hidden [animation-delay:2150ms]">
-          <div className="animate-slideDown [animation-delay:2150ms]">
+          <div className="animate-slideIn [animation-delay:2150ms]">
             <LinkButton label="Projets" href={'#projects'} />
           </div>
         </div>

@@ -134,7 +134,31 @@ module.exports = {
             opacity: 1,
           },
         },
-        slideDown: {
+        slideSlightlyUp: {
+          from: {
+            transform: 'translateY(20px)',
+          },
+          to: {
+            transform: 'translateY(0)',
+          },
+        },
+        fadeOut: {
+          from: {
+            opacity: 1,
+          },
+          to: {
+            opacity: 0,
+          },
+        },
+        slideSlightlyDown: {
+          from: {
+            transform: 'translateY(0px)',
+          },
+          to: {
+            transform: 'translateY(20px)',
+          },
+        },
+        slideIn: {
           from: {
             transform: 'translateY(-100%)',
           },
@@ -152,7 +176,10 @@ module.exports = {
           'textAfterWriting 1s ease-in-out, textAfterColoringDark 1s ease-in-out',
         textAppear: 'textAppearance 500ms backwards',
         fadeIn: 'fade 500ms ease-in both',
-        slideDown: 'slideDown 0ms both',
+        slideIn: 'slideIn 0ms both',
+        fadeInAndUp: 'fade 400ms ease-in both, slideSlightlyUp 400ms ease-in both',
+        fadeOutAndDown:
+          'fadeOut 400ms ease-in both, slideSlightlyDown 400ms ease-in both',
       },
     },
   },

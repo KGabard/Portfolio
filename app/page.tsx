@@ -7,6 +7,7 @@ import ProjectsSection from './layouts/ProjectsSection'
 import ContactSection from './layouts/ContactSection'
 import SocialsBar from './components/SocialsBar'
 import SideNavBar from './components/SideNavBar'
+import GoToTopButton from './components/GoToTopButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +22,7 @@ export default function Home() {
       <ContactSection sectionId={5} />
       <SocialsBar />
       <SideNavBar />
+      <GoToTopButton />
     </main>
   )
 }
