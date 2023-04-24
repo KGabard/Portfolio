@@ -35,6 +35,7 @@
   .typo-label {
     @apply font-merri text-[16px] sm:text-[20px];
   }
+
   .typo-label-bold {
     @apply font-merri text-[16px] font-bold sm:text-[20px];
   }
