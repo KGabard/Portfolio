@@ -15,6 +15,7 @@ type Props = {
   sectionId: number
   liveSrc?: string
   reverse?: boolean
+  style?: React.CSSProperties
 }
 
 export default function ProjectCard({
@@ -27,6 +28,7 @@ export default function ProjectCard({
   sectionId,
   liveSrc,
   reverse = false,
+  style,
 }: Props) {
   const summaryComponent = parseBoldText(summary)
 
@@ -35,7 +37,9 @@ export default function ProjectCard({
   useApplyClassesInView<HTMLDivElement>({
     observedRef: cardDivRef,
     targetRef: cardDivRef,
-    classesToAdd: [`${reverse ? 'animate-fadeInAndLeft' : 'animate-fadeInAndRight'}`],
+    classesToAdd: [
+      `${reverse ? 'animate-fadeInAndLeft' : 'animate-fadeInAndRight'}`,
+    ],
     classesToRemove: ['opacity-0'],
     sectionId,
   })
@@ -46,6 +50,7 @@ export default function ProjectCard({
       className={`mx-auto flex h-fit w-full min-w-[288px] max-w-[90%] flex-col items-center gap-4 rounded-3xl bg-white p-8 drop-shadow-big dark:bg-neutral-dark-1 sm:max-w-[100%] md:max-w-[680px] xl:h-[480px] xl:min-w-[1024px] xl:max-w-[1150px] xl:gap-8 ${
         reverse ? 'xl:flex-row-reverse' : 'xl:flex-row'
       }`}
+      style={style}
     >
       <div className="relative aspect-[14/9] w-full xl:w-[57%]">
         <Image

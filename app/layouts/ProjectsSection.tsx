@@ -66,6 +66,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           githubSrc={'https://github.com/KGabard/perudo-game-app'}
           liveSrc={'https://kgabard.github.io/perudo-game-app/'}
           sectionId={sectionId}
+          style={{ animationDelay: '300ms' }}
         />
         <ProjectCard
           bigImgSrc={hrnetPresentation.src}

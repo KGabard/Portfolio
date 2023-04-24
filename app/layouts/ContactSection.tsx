@@ -5,6 +5,7 @@ import SectionTitle from '../components/SectionTitle'
 import useInView from '@/hooks/useInView'
 import { useContext, useEffect, useRef } from 'react'
 import { ScrollPositionContext } from '../providers/Providers'
+import useApplyClassesInView from '@/hooks/useApplyClassesInView'
 
 type Props = {
   sectionId: number
@@ -24,6 +25,16 @@ export default function ContactSection({ sectionId }: Props) {
     }
   }, [inRestrictedView, setActiveSection, sectionId])
 
+  const paragraphRef = useRef<HTMLParagraphElement>(null)
+
+  useApplyClassesInView<HTMLElement>({
+    observedRef: sectionRef,
+    targetRef: paragraphRef,
+    classesToAdd: ['animate-fadeInAndUp', '[animation-delay:500ms]'],
+    classesToRemove: ['opacity-0'],
+    sectionId,
+  })
+
   return (
     <section
       ref={sectionRef}
@@ -31,7 +42,10 @@ export default function ContactSection({ sectionId }: Props) {
       className="mb-[200px] mt-[112px] flex w-full flex-col gap-10"
     >
       <SectionTitle title="Contact" sectionId={sectionId} />
-      <p className="typo-body w-full text-neutral-1 dark:text-neutral-dark-3">
+      <p
+        ref={paragraphRef}
+        className="typo-body w-full text-neutral-1 dark:text-neutral-dark-3"
+      >
         Je suis actuellement disponible pour m&apos;investir dans de nouveaux
         projets, n&apos;hésitez pas à me contacter si vous souhaitez que nous
         travaillions ensemble.
