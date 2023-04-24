@@ -17,7 +17,7 @@ export default function useApplyClassesInView<T extends HTMLElement>({
   classesToAdd,
   classesToRemove,
   sectionId,
-  options={ rootMargin: '0% 0% -30% 0%' },
+  options = { rootMargin: '0% 0% -30% 0%' },
 }: Props<T>) {
   const { activeSection } = useContext(ScrollPositionContext)
 
@@ -27,7 +27,8 @@ export default function useApplyClassesInView<T extends HTMLElement>({
   })
 
   useEffect(() => {
-    if (inRestrictedView) {
+    //Ajout des classes lorsque l'élément apparait dans la vue restreinte ou que la section active est situé en-dessus de la section qui contient l'élément
+    if (inRestrictedView || activeSection > sectionId) {
       classesToAdd.forEach((className) => {
         targetRef.current?.classList.add(className)
       })
@@ -36,6 +37,7 @@ export default function useApplyClassesInView<T extends HTMLElement>({
       })
     }
 
+    //Retrait des classes lorsque l'élément n'apparait plus à l'écran et que la section active est situé au-dessus de la section qui contient l'élément
     if (!inScreenView && activeSection < sectionId) {
       classesToAdd.forEach((className) => {
         targetRef.current?.classList.remove(className)
