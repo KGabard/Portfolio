@@ -2,6 +2,8 @@ import { parseBoldText } from '@/lib/utils'
 import Image from 'next/image'
 import LinkButton from '../components/LinkButton'
 import SkillTag from '../components/SkillTag'
+import { useRef } from 'react'
+import useApplyClassesInView from '@/hooks/useApplyClassesInView'
 
 type Props = {
   bigImgSrc: string
@@ -10,6 +12,7 @@ type Props = {
   skills: SkillType[]
   summary: string
   githubSrc: string
+  sectionId: number
   liveSrc?: string
   reverse?: boolean
 }
@@ -21,13 +24,25 @@ export default function ProjectCard({
   skills,
   summary,
   githubSrc,
+  sectionId,
   liveSrc,
   reverse = false,
 }: Props) {
   const summaryComponent = parseBoldText(summary)
 
+  const cardDivRef = useRef<HTMLDivElement>(null)
+
+  useApplyClassesInView<HTMLDivElement>({
+    observedRef: cardDivRef,
+    targetRef: cardDivRef,
+    classesToAdd: [`${reverse ? 'animate-fadeInAndLeft' : 'animate-fadeInAndRight'}`],
+    classesToRemove: ['opacity-0'],
+    sectionId,
+  })
+
   return (
     <div
+      ref={cardDivRef}
       className={`mx-auto flex h-fit w-full min-w-[288px] max-w-[90%] flex-col items-center gap-4 rounded-3xl bg-white p-8 drop-shadow-big dark:bg-neutral-dark-1 sm:max-w-[100%] md:max-w-[680px] xl:h-[480px] xl:min-w-[1024px] xl:max-w-[1150px] xl:gap-8 ${
         reverse ? 'xl:flex-row-reverse' : 'xl:flex-row'
       }`}

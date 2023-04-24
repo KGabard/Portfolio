@@ -142,6 +142,14 @@ module.exports = {
             transform: 'translateX(0)',
           },
         },
+        slideSlightlyLeft: {
+          from: {
+            transform: 'translateX(30px)',
+          },
+          to: {
+            transform: 'translateX(0)',
+          },
+        },
         slideSlightlyUp: {
           from: {
             transform: 'translateY(20px)',
@@ -199,6 +207,8 @@ module.exports = {
           'fade 400ms ease-in both, slideSlightlyUp 400ms ease-in both',
         fadeInAndRight:
           'fade 400ms ease-in both, slideSlightlyRight 400ms ease-in both',
+        fadeInAndLeft:
+          'fade 400ms ease-in both, slideSlightlyLeft 400ms ease-in both',
         fadeOutAndDown:
           'fadeOut 400ms ease-in both, slideSlightlyDown 400ms ease-in both',
         growX: 'growX 250ms ease-in-out both',

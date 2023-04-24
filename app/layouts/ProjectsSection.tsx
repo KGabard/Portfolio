@@ -65,6 +65,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           }
           githubSrc={'https://github.com/KGabard/perudo-game-app'}
           liveSrc={'https://kgabard.github.io/perudo-game-app/'}
+          sectionId={sectionId}
         />
         <ProjectCard
           bigImgSrc={hrnetPresentation.src}
@@ -76,6 +77,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           }
           githubSrc={'https://github.com/KGabard/OC_P14_HRnet'}
           liveSrc={'https://kgabard.github.io/OC_P14_HRnet/'}
+          sectionId={sectionId}
           reverse={true}
         />
         <ProjectCard
@@ -87,6 +89,7 @@ export default function ProjectsSection({ sectionId }: Props) {
             'Application de **gestion de compte en banque** incluant un **système de connexion sécurisée** via un backend utilisant des tokens JWT. La gestion du state et de sa persistance et assurée par Redux Toolkit et Redux Persist.'
           }
           githubSrc={'https://github.com/KGabard/OC_P13_ArgentBank_Frontend'}
+          sectionId={sectionId}
         />
         <ProjectCard
           bigImgSrc={sportSeePresentation.src}
@@ -98,6 +101,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           }
           githubSrc={'https://github.com/KGabard/OC_P12_SportSee'}
           liveSrc={'https://kgabard.github.io/OC_P12_SportSee/'}
+          sectionId={sectionId}
           reverse={true}
         />
         <ProjectCard
@@ -110,6 +114,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           }
           githubSrc={'https://github.com/KGabard/OC_P11_Kasa'}
           liveSrc={'https://kgabard.github.io/OC_P11_Kasa/'}
+          sectionId={sectionId}
         />
         <ProjectCard
           bigImgSrc={billedPresentation.src}
@@ -120,6 +125,7 @@ export default function ProjectsSection({ sectionId }: Props) {
             "Projet visant à **corriger des bugs** et à mettre en place des **tests unitaires et d'intégration** pour une solution Saas destinée aux équipes de ressources humaines."
           }
           githubSrc={'https://github.com/KGabard/OC_P9_Billed_Frontend'}
+          sectionId={sectionId}
           reverse={true}
         />
         <ProjectCard
@@ -132,6 +138,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           }
           githubSrc={'https://github.com/KGabard/OC_P7_LesPetitsPlats'}
           liveSrc={'https://kgabard.github.io/OC_P7_LesPetitsPlats/'}
+          sectionId={sectionId}
         />
         <ProjectCard
           bigImgSrc={fisheyePresentation.src}
@@ -143,6 +150,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           }
           githubSrc={'https://github.com/KGabard/OC_P6_fisheye'}
           liveSrc={'https://kgabard.github.io/OC_P6_fisheye/'}
+          sectionId={sectionId}
           reverse={true}
         />
         <ProjectCard
@@ -155,6 +163,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           }
           githubSrc={'https://github.com/KGabard/OC_P4_GameOn'}
           liveSrc={'https://kgabard.github.io/OC_P4_GameOn/'}
+          sectionId={sectionId}
         />
         <ProjectCard
           bigImgSrc={ohmyfoodPresentation.src}
@@ -166,6 +175,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           }
           githubSrc={'https://github.com/KGabard/OC_P3_ohmyfood-app/'}
           liveSrc={'https://kgabard.github.io/OC_P3_ohmyfood-app/'}
+          sectionId={sectionId}
           reverse={true}
         />
         <ProjectCard
@@ -178,6 +188,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           }
           githubSrc={'https://github.com/KGabard/OC_P2_booki'}
           liveSrc={'https://kgabard.github.io/OC_P2_booki/'}
+          sectionId={sectionId}
         />
       </div>
     </section>
