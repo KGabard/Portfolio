@@ -27,7 +27,7 @@ export default function BurgerMenu() {
       >
         <nav
           onClick={handleToggleBtn}
-          className="typo-title flex flex-col items-center bg-neutral-bg text-black dark:bg-neutral-dark-bg dark:text-white "
+          className="typo-title flex flex-col items-center bg-neutral-bg text-black dark:bg-neutral-dark-bg dark:text-white max-h-[calc(100vh-var(--header-height))] overflow-y-scroll"
           aria-label="mobile"
         >
           <a
