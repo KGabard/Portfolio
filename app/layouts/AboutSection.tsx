@@ -1,8 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import profilPicture from 'public/assets/images/profilPicture3.png'
-import frontPicture from 'public/assets/images/frontPicture2.png'
+import profilPicture from 'public/assets/images/profilPicture.png'
+import frontPicture from 'public/assets/images/frontPicture.png'
 import SectionTitle from '../components/SectionTitle'
 import Link from 'next/link'
 import useInView from '@/hooks/useInView'
