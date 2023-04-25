@@ -28,7 +28,7 @@ export default function SkillsSection({ sectionId }: Props) {
   const sectionRef = useRef<HTMLElement>(null)
   const { inRestrictedView } = useInView<HTMLElement>({
     observedRef: sectionRef,
-    options: { rootMargin: '-50%' },
+    options: { rootMargin: '-50% 0% -50% 0%' },
   })
   const { setActiveSection } = useContext(ScrollPositionContext)
 

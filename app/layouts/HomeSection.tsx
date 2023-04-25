@@ -9,25 +9,11 @@ type Props = {
   sectionId: number
 }
 
-function resetScroll() {
-  document.body.style.overflow = 'hidden'
-  window.scrollTo({ top: 0, behavior: 'auto' })
-  document.documentElement.classList.remove('scroll-smooth')
-}
-
 export default function HomeSection({ sectionId }: Props) {
   const [isFirstRender, setIsFirstRender] = useState(true)
 
   useEffect(() => {
-    if (window.scrollY > 0) {
-      resetScroll()
-    }
-
     const firstRenderOverTimeout = setTimeout(() => {
-      document.body.style.overflow = 'auto'
-      if (!document.documentElement.classList.contains('scroll-smooth')) {
-        document.documentElement.classList.add('scroll-smooth')
-      }
       setIsFirstRender(false)
     }, 1800)
 
@@ -39,7 +25,7 @@ export default function HomeSection({ sectionId }: Props) {
   const sectionRef = useRef<HTMLElement>(null)
   const { inRestrictedView } = useInView<HTMLElement>({
     observedRef: sectionRef,
-    options: { rootMargin: '-50%' },
+    options: { rootMargin: '-50% 0% -50% 0%' },
   })
   const { setActiveSection } = useContext(ScrollPositionContext)
 

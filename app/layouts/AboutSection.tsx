@@ -19,7 +19,7 @@ export default function AboutSection({ sectionId }: Props) {
   const sectionRef = useRef<HTMLElement>(null)
   const { inRestrictedView } = useInView<HTMLElement>({
     observedRef: sectionRef,
-    options: { rootMargin: '-50%' },
+    options: { rootMargin: '-50% 0% -50% 0%' },
   })
   const { setActiveSection } = useContext(ScrollPositionContext)
 
@@ -32,7 +32,10 @@ export default function AboutSection({ sectionId }: Props) {
   useApplyClassesInView({
     observedRef: paragraphRef,
     targetRef: paragraphRef,
-    classesToAdd: ['animate-fadeInAndUp', `${isScreenSmall ? '[animation-delay:0ms]' : '[animation-delay:500ms]'}`],
+    classesToAdd: [
+      'animate-fadeInAndUp',
+      `${isScreenSmall ? '[animation-delay:0ms]' : '[animation-delay:500ms]'}`,
+    ],
     classesToRemove: ['opacity-0'],
     sectionId,
   })

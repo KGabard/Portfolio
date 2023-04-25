@@ -15,7 +15,7 @@ export default function PathSection({ sectionId }: Props) {
   const sectionRef = useRef<HTMLElement>(null)
   const { inRestrictedView } = useInView<HTMLElement>({
     observedRef: sectionRef,
-    options: { rootMargin: '-50%' },
+    options: { rootMargin: '-50% 0% -50% 0%' },
   })
   const { setActiveSection } = useContext(ScrollPositionContext)
 
@@ -34,7 +34,10 @@ export default function PathSection({ sectionId }: Props) {
       className="my-[112px] flex w-full flex-col"
     >
       <SectionTitle title="Parcours" sectionId={sectionId} />
-      <div ref={pathListDivRef} className="relative mx-auto mt-14 flex flex-col gap-12 lg:mx-0 lg:w-full">
+      <div
+        ref={pathListDivRef}
+        className="relative mx-auto mt-14 flex flex-col gap-12 lg:mx-0 lg:w-full"
+      >
         <PathComponent
           institution="oc"
           dates="2022-2023"
@@ -61,7 +64,7 @@ export default function PathSection({ sectionId }: Props) {
           sectionId={sectionId}
         />
         <div className="absolute left-0 top-0 -z-10 h-full w-1 translate-x-1.5 rounded-full bg-neutral-1 drop-shadow-sharp dark:bg-neutral-dark-3 lg:left-1/2 lg:-translate-x-1/2"></div>
-        <TriangleSVG className="absolute -top-0.5 left-2 lg:left-1/2 -translate-x-1/2 h-5 w-5 text-neutral-1 dark:text-neutral-dark-3 " />
+        <TriangleSVG className="absolute -top-0.5 left-2 h-5 w-5 -translate-x-1/2 text-neutral-1 dark:text-neutral-dark-3 lg:left-1/2 " />
       </div>
     </section>
   )
