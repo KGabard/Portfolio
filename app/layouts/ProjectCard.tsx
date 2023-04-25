@@ -58,7 +58,7 @@ export default function ProjectCard({
           src={bigImgSrc}
           alt={title}
           fill
-          sizes="80vw, (min-width: 640px) 70vw, (min-width: 1280px) 50vw"
+          sizes="(min-width: 640px) 70vw, (min-width: 1280px) 50vw, 80vw"
           style={{ objectFit: 'contain' }}
         />
         <Image
@@ -66,7 +66,7 @@ export default function ProjectCard({
           src={smallImgSrc}
           alt={title}
           fill
-          sizes="80vw, (min-width: 640px) 70vw, (min-width: 1280px) 50vw"
+          sizes="(min-width: 640px) 70vw, (min-width: 1280px) 50vw, 80vw"
           style={{ objectFit: 'contain' }}
         />
       </div>

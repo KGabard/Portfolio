@@ -12,7 +12,6 @@ export default function SideNavBar() {
 
   return (
     <nav
-      role="navigation"
       aria-label="Side navbar"
       className="fixed left-1/2 top-[100vh] hidden w-full max-w-[var(--content-max-width)] -translate-x-1/2 -translate-y-full bg-highlight-1 sm:block"
     >
