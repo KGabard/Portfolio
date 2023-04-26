@@ -23,7 +23,7 @@ export default function Navbar() {
         className="typo-label relative text-black after:absolute after:bottom-0 after:right-0 after:h-0.5 after:w-0 after:bg-highlight-1 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:w-full dark:text-neutral-dark-3 dark:after:bg-highlight-dark-1"
         href={'#path'}
       >
-        Cursus
+        Parcours
       </a>
       <a
         className="typo-label relative text-black after:absolute after:bottom-0 after:right-0 after:h-0.5 after:w-0 after:bg-highlight-1 after:transition-all after:duration-300 after:content-[''] hover:after:left-0 hover:after:w-full dark:text-neutral-dark-3 dark:after:bg-highlight-dark-1"

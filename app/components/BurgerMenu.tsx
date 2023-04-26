@@ -21,42 +21,42 @@ export default function BurgerMenu() {
       </div>
       <section
         id="mobile-menu"
-        className={`z-[100] animate-openMenu absolute left-0 top-[var(--header-height)] w-full origin-top flex-col justify-center bg-black text-5xl ${
+        className={`absolute left-0 top-[var(--header-height)] z-[100] w-full origin-top animate-openMenu flex-col justify-center bg-black text-5xl ${
           isOpen ? 'flex' : 'hidden'
         }`}
       >
         <nav
           onClick={handleToggleBtn}
-          className="typo-title flex flex-col items-center bg-neutral-bg text-black dark:bg-neutral-dark-bg dark:text-white max-h-[calc(100vh-var(--header-height))] overflow-y-scroll"
+          className="typo-title flex max-h-[calc(100vh-var(--header-height))] flex-col items-center overflow-y-scroll bg-neutral-bg text-black dark:bg-neutral-dark-bg dark:text-white"
           aria-label="mobile"
         >
           <a
             href="#home"
-            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-neutral-2 dark:after:bg-neutral-dark-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
+            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:z-[110] after:h-1 after:w-1/2 after:-translate-x-1/2 after:translate-y-0.5 after:rounded after:bg-neutral-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:after:bg-neutral-dark-2 dark:hover:bg-highlight-dark-1 dark:hover:text-black"
           >
             Accueil
           </a>
           <a
             href="#about"
-            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-neutral-2 dark:after:bg-neutral-dark-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
+            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:z-[110] after:h-1 after:w-1/2 after:-translate-x-1/2 after:translate-y-0.5 after:rounded after:bg-neutral-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:after:bg-neutral-dark-2 dark:hover:bg-highlight-dark-1 dark:hover:text-black"
           >
             A propos
           </a>
           <a
             href="#skills"
-            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-neutral-2 dark:after:bg-neutral-dark-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
+            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:z-[110] after:h-1 after:w-1/2 after:-translate-x-1/2 after:translate-y-0.5 after:rounded after:bg-neutral-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:after:bg-neutral-dark-2 dark:hover:bg-highlight-dark-1 dark:hover:text-black"
           >
             Compétences
           </a>
           <a
             href="#path"
-            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-neutral-2 dark:after:bg-neutral-dark-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
+            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:z-[110] after:h-1 after:w-1/2 after:-translate-x-1/2 after:translate-y-0.5 after:rounded after:bg-neutral-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:after:bg-neutral-dark-2 dark:hover:bg-highlight-dark-1 dark:hover:text-black"
           >
-            Cursus
+            Parcours
           </a>
           <a
             href="#projects"
-            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-1/2 after:-translate-x-1/2 after:bg-neutral-2 dark:after:bg-neutral-dark-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:hover:bg-highlight-dark-1 dark:hover:text-black after:rounded after:translate-y-0.5 after:z-[110]"
+            className="relative w-full py-12 text-center transition-colors duration-[250ms] ease-in after:absolute after:bottom-0 after:left-1/2 after:z-[110] after:h-1 after:w-1/2 after:-translate-x-1/2 after:translate-y-0.5 after:rounded after:bg-neutral-2 after:content-[''] hover:bg-highlight-1 hover:text-white dark:after:bg-neutral-dark-2 dark:hover:bg-highlight-dark-1 dark:hover:text-black"
           >
             Projets
           </a>
