@@ -7,14 +7,11 @@ import moonIcon from 'public/assets/icons/moon-icon.svg'
 import sunIcon from 'public/assets/icons/sun-icon.svg'
 
 export default function ToggleThemeBtn() {
-  const [mounted, setMounted] = useState(false)
   const [enableClick, setEnableClick] = useState(false)
   const { theme, setTheme } = useTheme()
 
-  // useEffect only runs on the client, so now we can safely show the UI
+  // Prevent toggle theme on page load during the Home section animation
   useEffect(() => {
-    setMounted(true)
-
     const timeout = setTimeout(() => {
       setEnableClick(true)
     }, 1800)
@@ -29,17 +26,20 @@ export default function ToggleThemeBtn() {
         if (enableClick) setTheme(theme === 'light' ? 'dark' : 'light')
       }}
     >
-      {theme === 'dark' || !mounted ? (
-        <Image src={sunIcon} alt="Mode clair" width={32} height={32} />
-      ) : (
-        <Image
-          className="relative top-[-2px]"
-          src={moonIcon}
-          alt="Mode sombre"
-          width={32}
-          height={32}
-        />
-      )}
+      <Image
+        className="hidden dark:block"
+        src={sunIcon}
+        alt="Mode clair"
+        width={32}
+        height={32}
+      />
+      <Image
+        className="relative top-[-2px] dark:hidden"
+        src={moonIcon}
+        alt="Mode sombre"
+        width={32}
+        height={32}
+      />
     </button>
   )
 }
