@@ -32,7 +32,7 @@ export default function PathSection({ sectionId }: Props) {
   useApplyClassesInView<HTMLDivElement>({
     observedRef: arrowDivRdf,
     targetRef: arrowDivRdf,
-    classesToAdd: ['animate-growY', '[animation-delay:500ms]'],
+    classesToAdd: ['animate-growY', '[animation-duration:500ms]', '[animation-delay:1300ms]'],
     classesToRemove: ['opacity-0'],
     sectionId,
   })

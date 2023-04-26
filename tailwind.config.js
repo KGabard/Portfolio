@@ -220,7 +220,7 @@ module.exports = {
         fadeOutAndDown:
           'fadeOut 400ms ease-in both, slideSlightlyDown 400ms ease-in both',
         growX: 'growX 250ms ease-in-out both',
-        growY: 'growY 450ms ease-in-out both',
+        growY: 'growY ease-in-out both',
       },
     },
   },
