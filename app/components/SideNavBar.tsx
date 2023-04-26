@@ -15,7 +15,7 @@ export default function SideNavBar() {
       aria-label="Side navbar"
       className="fixed left-1/2 top-[100vh] hidden w-full max-w-[var(--content-max-width)] -translate-x-1/2 -translate-y-full bg-highlight-1 sm:block"
     >
-      <div className="absolute bottom-0 right-0 flex flex-col items-center gap-4 pr-6">
+      <div className="absolute bottom-0 right-0 flex flex-col items-center gap-4 pr-9">
         <a
           href="#home"
           className={`hover:activateNavSquare h-4 w-4 cursor-pointer rounded-sm bg-neutral-1 opacity-50 transition-all duration-150 ease-in ${
