@@ -6,6 +6,7 @@ import SectionTitle from '../components/SectionTitle'
 import { useContext, useEffect, useRef } from 'react'
 import { ScrollPositionContext } from '../providers/Providers'
 import TriangleSVG from '../components/svgs/TriangleSVG'
+import useApplyClassesInView from '@/hooks/useApplyClassesInView'
 
 type Props = {
   sectionId: number
@@ -26,6 +27,15 @@ export default function PathSection({ sectionId }: Props) {
   }, [inRestrictedView, setActiveSection, sectionId])
 
   const pathListDivRef = useRef<HTMLDivElement>(null)
+  const arrowDivRdf = useRef<HTMLDivElement>(null)
+
+  useApplyClassesInView<HTMLDivElement>({
+    observedRef: arrowDivRdf,
+    targetRef: arrowDivRdf,
+    classesToAdd: ['animate-growY', '[animation-delay:500ms]'],
+    classesToRemove: ['opacity-0'],
+    sectionId,
+  })
 
   return (
     <section
@@ -63,8 +73,12 @@ export default function PathSection({ sectionId }: Props) {
           pathId={2}
           sectionId={sectionId}
         />
-        <div className="absolute left-0 top-0 -z-10 h-full w-1 translate-x-1.5 rounded-full bg-neutral-1 drop-shadow-sharp dark:bg-neutral-dark-3 lg:left-1/2 lg:-translate-x-1/2"></div>
-        <TriangleSVG className="absolute -top-0.5 left-2 h-5 w-5 -translate-x-1/2 text-neutral-1 dark:text-neutral-dark-3 lg:left-1/2 " />
+        <div
+          ref={arrowDivRdf}
+          className="origin-bottom absolute left-[6px] top-0 -z-10 h-full w-1 rounded-full bg-neutral-1 drop-shadow-sharp dark:bg-neutral-dark-3 lg:left-[calc(50%-2px)]"
+        >
+          <TriangleSVG className="relative -left-2 -top-0.5 h-5 w-5 text-neutral-1 dark:text-neutral-dark-3" />
+        </div>
       </div>
     </section>
   )

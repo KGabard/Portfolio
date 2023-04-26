@@ -192,6 +192,14 @@ module.exports = {
             transformOrigin: 'left',
           },
         },
+        growY: {
+          from: {
+            transform: 'scaleY(0)',
+          },
+          to: {
+            transform: 'scaleY(1)',
+          },
+        },
       },
       animation: {
         levitate: 'preFloat 300ms linear, float 1000ms 300ms infinite ease-out',
@@ -212,6 +220,7 @@ module.exports = {
         fadeOutAndDown:
           'fadeOut 400ms ease-in both, slideSlightlyDown 400ms ease-in both',
         growX: 'growX 250ms ease-in-out both',
+        growY: 'growY 450ms ease-in-out both',
       },
     },
   },
