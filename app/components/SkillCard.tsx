@@ -58,9 +58,9 @@ export default function SkillCard({
             />
           )}
         </div>
-        <div className="bg-gray-100 absolute flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-white drop-shadow-small [backface-visibility:hidden] [transform:rotateY(180deg)] dark:bg-neutral-dark-1 sm:drop-shadow-big">
+        <div className="bg-gray-100 absolute p-1 flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-white drop-shadow-small [backface-visibility:hidden] [transform:rotateY(180deg)] dark:bg-neutral-dark-1 sm:drop-shadow-big">
           {label && (
-            <h2 className="typo-label text-neutral-1 dark:text-neutral-dark-3">
+            <h2 className="typo-label text-center text-neutral-1 dark:text-neutral-dark-3">
               {label}
             </h2>
           )}

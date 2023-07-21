@@ -10,6 +10,9 @@ type SkillType =
   | 'figma'
   | 'jest'
   | 'js'
+  | 'apollo'
+  | 'mui'
+  | 'storybook'
 
 type ProjectType =
   | 'perudo'

@@ -4,6 +4,8 @@ import SectionTitle from '../components/SectionTitle'
 
 import perudoPresentation from 'public/assets/images/perudo-presentation.png'
 import perudoPresentationFS from 'public/assets/images/perudo-presentation-fullscreen.png'
+import amazonPresentation from 'public/assets/images/amazon-presentation.png'
+import amazonPresentationFS from 'public/assets/images/amazon-presentation-fullscreen.png'
 import hrnetPresentation from 'public/assets/images/hrnet-presentation.png'
 import hrnetPresentationFS from 'public/assets/images/hrnet-presentation-fullscreen.png'
 import argentBankPresentation from 'public/assets/images/argent-bank-presentation.png'
@@ -69,17 +71,30 @@ export default function ProjectsSection({ sectionId }: Props) {
           style={{ animationDelay: '300ms' }}
         />
         <ProjectCard
+          bigImgSrc={amazonPresentation.src}
+          smallImgSrc={amazonPresentationFS.src}
+          title={'Amazon Search'}
+          skills={['ts', 'next', 'apollo', 'mui', 'storybook', 'jest']}
+          summary={
+            "Moteur de recherche basé sur l'**API GraphQl** d'Amazon. La création des composants s'appuie sur **Material UI** et **Storybook**"
+          }
+          githubSrc={'https://github.com/KGabard/amazon-search-app'}
+          liveSrc={'https://amazon-search-app.vercel.app/'}
+          sectionId={sectionId}
+          reverse={true}
+        />
+        <ProjectCard
           bigImgSrc={hrnetPresentation.src}
           smallImgSrc={hrnetPresentationFS.src}
           title={'HRnet'}
           skills={['ts', 'react', 'sass', 'figma']}
           summary={
-            "Application interne de **gestion de base de données** d'employés. Elle intègre un **package npm personnalisé** pour l'affichage des données sous forme d'une table."
+            "Application interne de **gestion de base de données** d'employés. Elle intègre un **package NPM personnalisé** pour l'affichage des données sous forme d'une table."
           }
           githubSrc={'https://github.com/KGabard/OC_P14_HRnet'}
           liveSrc={'https://kgabard.github.io/OC_P14_HRnet/'}
           sectionId={sectionId}
-          reverse={true}
+          reverse={false}
         />
         <ProjectCard
           bigImgSrc={argentBankPresentation.src}
@@ -91,6 +106,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           }
           githubSrc={'https://github.com/KGabard/OC_P13_ArgentBank_Frontend'}
           sectionId={sectionId}
+          reverse={true}
         />
         <ProjectCard
           bigImgSrc={sportSeePresentation.src}
@@ -103,7 +119,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           githubSrc={'https://github.com/KGabard/OC_P12_SportSee'}
           liveSrc={'https://kgabard.github.io/OC_P12_SportSee/'}
           sectionId={sectionId}
-          reverse={true}
+          reverse={false}
         />
         <ProjectCard
           bigImgSrc={kasaPresentation.src}
@@ -116,6 +132,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           githubSrc={'https://github.com/KGabard/OC_P11_Kasa'}
           liveSrc={'https://kgabard.github.io/OC_P11_Kasa/'}
           sectionId={sectionId}
+          reverse={true}
         />
         <ProjectCard
           bigImgSrc={billedPresentation.src}
@@ -127,7 +144,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           }
           githubSrc={'https://github.com/KGabard/OC_P9_Billed_Frontend'}
           sectionId={sectionId}
-          reverse={true}
+          reverse={false}
         />
         <ProjectCard
           bigImgSrc={petitsPlatsPresentation.src}
@@ -140,6 +157,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           githubSrc={'https://github.com/KGabard/OC_P7_LesPetitsPlats'}
           liveSrc={'https://kgabard.github.io/OC_P7_LesPetitsPlats/'}
           sectionId={sectionId}
+          reverse={true}
         />
         <ProjectCard
           bigImgSrc={fisheyePresentation.src}
@@ -152,7 +170,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           githubSrc={'https://github.com/KGabard/OC_P6_fisheye'}
           liveSrc={'https://kgabard.github.io/OC_P6_fisheye/'}
           sectionId={sectionId}
-          reverse={true}
+          reverse={false}
         />
         <ProjectCard
           bigImgSrc={gameOnPresentation.src}
@@ -165,6 +183,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           githubSrc={'https://github.com/KGabard/OC_P4_GameOn'}
           liveSrc={'https://kgabard.github.io/OC_P4_GameOn/'}
           sectionId={sectionId}
+          reverse={true}
         />
         <ProjectCard
           bigImgSrc={ohmyfoodPresentation.src}
@@ -177,7 +196,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           githubSrc={'https://github.com/KGabard/OC_P3_ohmyfood-app/'}
           liveSrc={'https://kgabard.github.io/OC_P3_ohmyfood-app/'}
           sectionId={sectionId}
-          reverse={true}
+          reverse={false}
         />
         <ProjectCard
           bigImgSrc={bookiPresentation.src}
@@ -190,6 +209,7 @@ export default function ProjectsSection({ sectionId }: Props) {
           githubSrc={'https://github.com/KGabard/OC_P2_booki'}
           liveSrc={'https://kgabard.github.io/OC_P2_booki/'}
           sectionId={sectionId}
+          reverse={true}
         />
       </div>
     </section>

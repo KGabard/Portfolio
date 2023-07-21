@@ -23,6 +23,9 @@ export default function SkillsSection({ sectionId }: Props) {
     'tailwind',
     'figma',
     'jest',
+    'apollo',
+    'mui',
+    'storybook',
   ]
 
   const sectionRef = useRef<HTMLElement>(null)

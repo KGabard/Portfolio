@@ -10,6 +10,9 @@ import tailwindIcon from 'public/assets/icons/tailwind-icon.png'
 import sassIcon from 'public/assets/icons/sass-icon.png'
 import figmaIcon from 'public/assets/icons/figma-icon.png'
 import jestIcon from 'public/assets/icons/jest-icon.png'
+import apolloIcon from 'public/assets/icons/apollo-icon.png'
+import muiIcon from 'public/assets/icons/mui-icon.png'
+import storybookIcon from 'public/assets/icons/storybook-icon.png'
 
 export function parseBoldText(text: string): JSX.Element {
   const regex = /(\*\*)(.*?)\1/g
@@ -110,6 +113,24 @@ export function getSkillInfos(skill: SkillType) {
         iconSrc: jestIcon.src,
         darkIconSrc: undefined,
         label: 'Jest',
+      }
+    case 'apollo':
+      return {
+        iconSrc: apolloIcon.src,
+        darkIconSrc: undefined,
+        label: 'Apollo Client',
+      }
+    case 'mui':
+      return {
+        iconSrc: muiIcon.src,
+        darkIconSrc: undefined,
+        label: 'Material UI',
+      }
+    case 'storybook':
+      return {
+        iconSrc: storybookIcon.src,
+        darkIconSrc: undefined,
+        label: 'Storybook',
       }
     default:
       return {
